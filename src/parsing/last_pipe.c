@@ -6,12 +6,13 @@
 /*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 18:19:00 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/09/15 18:20:31 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/01 18:22:08 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 #include "utilities.h"
+#include "execution.h"
 #include <signal.h>
 #include <readline/readline.h>
 
@@ -42,7 +43,7 @@ int	read_last_pipe(t_big *v, char **line)
 
 	signal(SIGINT, last_pipe_handler);
 	new_input = readline(":> ");
-	signal(SIGINT, main_signal_handler);
+	signal(SIGINT, child_signal_handler);
 	if (g_signal || !new_input)
 		return (0);
 	if (!add_new_input(v, line, new_input))
