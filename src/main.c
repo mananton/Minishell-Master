@@ -6,7 +6,7 @@
 /*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:01:01 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/02 10:40:11 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/02 11:27:54 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,30 @@ static void	input_loop(t_big *v, char *input)
 	re_init(v);
 }
 
-int	main(int argc, char **argv, char **envp)
+void	shell_loop(t_big *v)
 {
 	char	*input;
+
+	while (1)
+	{
+		signal(SIGINT, read_signal_handler);
+		input = readline(CLR_GREEN"Minishell:> "CLR_RST);
+		if (g_signal == SIGINT)
+		{
+			v->exit_status = 128 + g_signal;
+			g_signal = 0;
+		}
+		if (input && ft_strlen(input) != 0)
+			input_loop(v, input);
+		else if (input)
+			free(input);
+		if (v->exit || !input)
+			exit_loop2(v, 0);
+	}
+}
+
+int	main(int argc, char **argv, char **envp)
+{
 	t_big	*v;
 
 	(void) argc;
@@ -101,16 +122,6 @@ int	main(int argc, char **argv, char **envp)
 	if (!struct_init(v, envp))
 		exit_loop2(v, 1);
 	signal(SIGQUIT, SIG_IGN);
-	while (1)
-	{
-		signal(SIGINT, read_signal_handler);
-		input = readline(CLR_GREEN"Minishell:> "CLR_RST);
-		if (input && ft_strlen(input) != 0)
-			input_loop(v, input);
-		else if (input)
-			free(input);
-		if (v->exit || !input)
-			exit_loop2(v, 0);
-	}
+	shell_loop(v);
 	return (0);
 }

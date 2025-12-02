@@ -6,7 +6,7 @@
 /*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:00:21 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/02 10:40:55 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/02 11:01:25 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,11 @@
 
 void	read_signal_handler(int signal)
 {
-	(void)signal;
+	g_signal = signal;
 	write(1, "\n", 1);
 	rl_replace_line("", 0);
 	rl_on_new_line();
 	rl_redisplay();
-}
-
-void	last_pipe_handler(int signal)
-{
-	g_signal = signal;
 }
 
 void	re_init(t_big *v)

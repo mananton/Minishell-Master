@@ -6,7 +6,7 @@
 /*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 18:19:00 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/02 10:41:50 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/02 10:56:26 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,7 @@ int	read_last_pipe(t_big *v, char **line)
 {
 	char	*new_input;
 
-	signal(SIGINT, last_pipe_handler);
 	new_input = readline(":> ");
-	signal(SIGINT, main_signal_handler);
 	if (g_signal || !new_input)
 		return (0);
 	if (!add_new_input(v, line, new_input))
