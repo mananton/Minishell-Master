@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_fork.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:50:54 by mananton          #+#    #+#             */
-/*   Updated: 2025/10/21 13:36:48 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/02 10:41:33 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ static char	**skip_leading_empty(char **argv)
 
 static void	child_fork(t_big *v, t_cmd *cmd, int prev_fd, int *pipefd)
 {
-	signal(SIGINT, child_signal_handler);
-	signal(SIGPIPE, child_signal_handler);
+	signal(SIGINT, main_signal_handler);
+	signal(SIGPIPE, main_signal_handler);
 	handle_child_pipe(v, prev_fd, pipefd);
 	if (!apply_redirs(v, cmd))
 		exit_child(v, 0);

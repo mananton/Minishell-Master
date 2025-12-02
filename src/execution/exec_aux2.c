@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_aux2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 19:51:27 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/09/15 08:36:55 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/02 10:39:39 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "minishell.h"
 #include <signal.h>
 
-void	child_signal_handler(int signal)
+void	main_signal_handler(int signal)
 {
 	g_signal = signal;
 }

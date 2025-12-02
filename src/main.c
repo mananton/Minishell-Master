@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:01:01 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/01 16:36:53 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/02 10:40:11 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ static void	input_loop_extra(t_big *v, t_parse *parsed)
 {
 	if (!check_heredoc(v, parsed->cmds) && !g_signal)
 	{
-		signal(SIGINT, child_signal_handler);
+		signal(SIGINT, main_signal_handler);
 		write(2, "minishell: failed allocation while creating heredoc\n", 52);
 		return (delete_tmpfiles(parsed));
 	}
-	signal(SIGINT, child_signal_handler);
+	signal(SIGINT, main_signal_handler);
 	if (g_signal)
 		return ;
 	if (parsed->cmds->n_cmds > 1)
@@ -72,7 +72,7 @@ static void	input_loop(t_big *v, char *input)
 {
 	t_parse	*parsed;
 
-	signal(SIGINT, child_signal_handler);
+	signal(SIGINT, main_signal_handler);
 	parsed = parse(v, input);
 	if (parsed)
 	{
@@ -103,7 +103,7 @@ int	main(int argc, char **argv, char **envp)
 	signal(SIGQUIT, SIG_IGN);
 	while (1)
 	{
-		signal(SIGINT, main_signal_handler);
+		signal(SIGINT, read_signal_handler);
 		input = readline(CLR_GREEN"Minishell:> "CLR_RST);
 		if (input && ft_strlen(input) != 0)
 			input_loop(v, input);

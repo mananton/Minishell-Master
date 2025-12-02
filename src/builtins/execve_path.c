@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execve_path.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:35:42 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/10/17 11:32:55 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/02 10:40:24 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	go_exec(char *total, char **argv, char **env_arr)
 {
 	signal(SIGINT, SIG_DFL);
 	execve(total, argv, env_arr);
-	signal(SIGINT, child_signal_handler);
+	signal(SIGINT, main_signal_handler);
 }
 
 int	execve_loop(t_big *v, char **argv, char **path)

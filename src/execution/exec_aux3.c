@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_aux3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 08:25:03 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/10/21 13:36:31 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/02 10:41:13 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	go_fork_single(t_big *v, t_cmd *cmd, pid_t *pid)
 	}
 	if (*pid == 0)
 	{
-		signal(SIGINT, child_signal_handler);
+		signal(SIGINT, main_signal_handler);
 		if (!apply_redirs(v, cmd))
 			exit_child(v, 0);
 		cmd_selector(v, cmd->argv, false);

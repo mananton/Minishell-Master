@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utilities.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 04:15:40 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/10/17 11:17:30 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/02 10:40:55 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		builtin_input(t_big *v, t_cmd *cmd);
 int		apply_redirs(t_big *v, t_cmd *cmd);
 
 int		ft_strisspace(const char *str);
-void	main_signal_handler(int signal);
+void	read_signal_handler(int signal);
 void	error_output(t_big *v, char type, char *str);
 int		save_std_fds(int *in, int *out);
 void	restore_std_fds(int in, int out);
