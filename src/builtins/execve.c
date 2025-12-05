@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:54:28 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/10/21 13:37:02 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/05 10:20:35 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ static void	execve_with_env(t_big *v, char **argv)
 
 static void	execve_absolute_path(t_big *v, char **argv)
 {
-    struct stat st;
-    
-    if (ft_strchr(argv[0], '/') && !g_signal)
-    {
-        if (stat(argv[0], &st) == -1)
-        {
-            write(2, "minishell: ", 11);
-            ft_putstr_fd(argv[0], 2);
+	struct stat	st;
+
+	if (ft_strchr(argv[0], '/') && !g_signal)
+	{
+		if (stat(argv[0], &st) == -1)
+		{
+			write(2, "minishell: ", 11);
+			ft_putstr_fd(argv[0], 2);
 			write(2, ": No such file or directory\n", 28);
 			v->exit_status = 127;
 			exit_child(v, 0);
