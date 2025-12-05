@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:02 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/10/17 11:20:22 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/05 10:47:42 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	exec_single(t_big *v, t_cmd *cmd)
 	if (is_builtin(cmd))
 	{
 		builtin(v, cmd);
-		signal(SIGINT, main_signal_handler);
 		return ;
 	}
 	if (!go_fork_single(v, cmd, &pid))

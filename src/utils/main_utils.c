@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:00:21 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/02 11:01:25 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/05 12:15:07 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	re_init(t_big *v)
 {
 	ft_free(v->pid_lst);
 	v->pid_lst = NULL;
+	if (g_signal)
+		v->exit_status = 128 + g_signal;
 	g_signal = 0;
 	v->pid_counter = 0;
 	v->last_pipe = 0;

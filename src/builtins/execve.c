@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:54:28 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/05 10:20:35 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/05 10:57:26 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,8 @@
 #include <signal.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include "libft.h"
 
-int		execve_loop(t_big *v, char **argv, char **path);
-
-static void	check_path_errors_or_exit(t_big *v, const char *path)
+static void	check_path_errors_or_exit(t_big *v, char *path)
 {
 	struct stat	st;
 
@@ -30,7 +27,7 @@ static void	check_path_errors_or_exit(t_big *v, const char *path)
 		if (S_ISDIR(st.st_mode))
 		{
 			write(2, "minishell: ", 11);
-			ft_putstr_fd((char *)path, 2);
+			ft_putstr_fd(path, 2);
 			write(2, ": Is a directory\n", 17);
 			v->exit_status = 126;
 			exit_child(v, 0);
@@ -38,7 +35,7 @@ static void	check_path_errors_or_exit(t_big *v, const char *path)
 		if (access(path, X_OK) == -1)
 		{
 			write(2, "minishell: ", 11);
-			ft_putstr_fd((char *)path, 2);
+			ft_putstr_fd(path, 2);
 			write(2, ": Permission denied\n", 20);
 			v->exit_status = 126;
 			exit_child(v, 0);
@@ -84,7 +81,6 @@ int	ft_execve(t_big *v, char **argv)
 	char	**paths;
 	int		check;
 
-	signal(SIGPIPE, SIG_DFL);
 	if (!argv[0])
 	{
 		v->exit_status = 127;

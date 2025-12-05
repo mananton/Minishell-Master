@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   heredoc_aux.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 12:39:21 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/09/12 16:06:46 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/05 12:35:45 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ char	*temp_path(char *tmp, char *path)
 
 void	signal_hdoc(int signal)
 {
-	(void)signal;
-	g_signal = 1;
+	g_signal = signal;
 	close(0);
 }
 

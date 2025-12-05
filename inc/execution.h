@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execution.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 04:15:56 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/02 10:41:01 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/05 10:53:33 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int		is_builtin(t_cmd *cmd);
 void	exec_single(t_big *v, t_cmd *cmds);
 void	broken_pipe_if_needed(int status);
 void	write_error(t_big *v, t_cmd *cmds, int i);
+int		execve_loop(t_big *v, char **argv, char **path);
 
 #endif

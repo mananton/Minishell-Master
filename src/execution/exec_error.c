@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 14:20:02 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/09/13 20:36:17 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/05 10:42:06 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 static void	err_a(t_big *v)
 {
-	write(2, "allocation error in builtin\n", 28);
+	write(2, "allocation error in execution\n", 30);
 	v->exit_status = 100;
 	v->exit = 1;
 }

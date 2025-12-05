@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:14 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/10/17 12:33:19 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/05 10:46:50 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	wait_forks(t_big *v, int *pid_lst, int pid_counter, t_cmd *cmds)
 		}
 		broken_pipe_if_needed(status);
 	}
-	signal(SIGINT, main_signal_handler);
 }
 
 void	wait_one_pid(t_big *v, pid_t pid, t_cmd *cmd)
@@ -75,9 +74,7 @@ void	wait_one_pid(t_big *v, pid_t pid, t_cmd *cmd)
 	int	sig;
 
 	sig = 0;
-	signal(SIGINT, SIG_IGN);
 	waitpid(pid, &status, 0);
-	signal(SIGINT, main_signal_handler);
 	if (WIFSIGNALED(status))
 	{
 		sig = WTERMSIG(status);

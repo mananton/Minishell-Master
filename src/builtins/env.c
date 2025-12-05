@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:54:08 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/09/14 08:45:34 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/05 10:31:28 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	print_env(t_env *env)
 	if (!env)
 		return ;
 	cur = env;
-	while (cur)
+	while (cur && !g_signal)
 	{
 		if (cur->content)
 		{
@@ -44,8 +44,8 @@ void	ft_env(t_big *v, t_env *env, char **argv)
 	{
 		write(2, "env: \'", 6);
 		ft_putstr_fd(argv[1], 2);
-		write(2, "\': Permission denied\n", 21);
-		v->exit_status = 126;
+		write(2, "\': No such file or directory\n", 28);
+		v->exit_status = 127;
 		return ;
 	}
 	print_env(env);

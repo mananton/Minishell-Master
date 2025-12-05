@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 08:25:20 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/10/21 12:41:48 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/05 11:28:14 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	set_lvl(int lvl)
 {
 	if (lvl < 0)
 		lvl = 0;
-	if (lvl > 1000)
+	if (lvl >= 1000)
 		lvl = 1;
 	else
 		lvl++;

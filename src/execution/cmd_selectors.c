@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cmd_selectors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:00:51 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/02 10:40:53 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/05 10:23:33 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	builtin(t_big *v, t_cmd *cmd)
 	int		s_out;
 	char	**argv;
 
-	signal(SIGINT, main_signal_handler);
 	if (!save_std_fds(&s_in, &s_out))
 		return (0);
 	if (!apply_redirs(v, cmd))
