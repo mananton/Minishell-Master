@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   heredoc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:00:03 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/05 12:00:06 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/08 19:35:22 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,22 +102,14 @@ int	check_heredoc(t_big *v, t_cmd *head)
 	int		ret;
 	int		stdin_save;
 
-	stdin_save = dup(0);
 	signal(SIGINT, signal_hdoc);
 	cur = head;
 	while (cur)
 	{
 		ret = check_hdoc_cmd(v, cur->redirs);
-		if (g_signal)
-		{
-			dup2(stdin_save, 0);
-			close(stdin_save);
-			return (0);
-		}
-		if (!ret)
+		if (g_signal || !ret)
 			return (0);
 		cur = cur->next;
 	}
-	close(stdin_save);
 	return (1);
 }
