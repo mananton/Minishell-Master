@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   last_pipe.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 18:19:00 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/05 14:36:12 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/09 10:28:48 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ int	read_last_pipe(t_big *v, char **line)
 	new_input = readline(":> ");
 	signal(SIGINT, main_signal_handler);
 	if (g_signal || !new_input)
+	{
+		ft_free(new_input);
 		return (0);
+	}
 	if (!add_new_input(v, line, new_input))
 		return (0);
 	return (1);

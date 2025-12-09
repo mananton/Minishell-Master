@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   heredoc_aux.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 12:39:21 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/08 19:35:20 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/09 09:53:00 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	signal_hdoc(int signal)
 {
 	g_signal = signal;
 	rl_replace_line("", 0);
-	write(1, "\n", 1);
 	rl_done = 1;
+	write(1, "\n", 1);
 }
 
 char	*hdoc_filename(char *eof)

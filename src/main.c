@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:01:01 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/08 19:27:06 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/09 09:54:39 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static void	input_loop(t_big *v, char *input)
 
 	signal(SIGINT, main_signal_handler);
 	parsed = parse(v, input);
-	if (parsed)
+	if (parsed && !g_signal)
 	{
 		if (!parsed->error)
 		{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:58:20 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/05 14:39:36 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/09 10:16:56 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ t_parse	*parse(t_big *v, char *input)
 	parse = ft_calloc(1, sizeof(t_parse));
 	if (!parse)
 	{
-		write(2, "minishell: failed allocation in parsing\n", 40);	
+		write(2, "minishell: failed allocation in parsing\n", 40);
 		return (NULL);
 	}
 	if (!validate(v, &input))
 	{
 		add_history(input);
-		return (assign_error(parse, 1));
+		return (free(input), assign_error(parse, 1));
 	}
 	add_history(input);
 	if (!make_tokens(parse, input))

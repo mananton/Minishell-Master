@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   heredoc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:00:03 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/08 19:35:22 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/09 10:01:40 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ static int	write_to_hdoc(t_big *v, t_redir *cur, int fd, char *eof_str)
 
 	input = readline("heredoc> ");
 	if (g_signal)
+	{
+		ft_free(input);
 		return (0);
-	while (input && ft_strcmp(input, eof_str))
+	}
+	while (input && ft_strcmp(input, eof_str) && !g_signal)
 	{
 		if (ft_strlen(input) != 0)
 		{
@@ -100,7 +103,6 @@ int	check_heredoc(t_big *v, t_cmd *head)
 {
 	t_cmd	*cur;
 	int		ret;
-	int		stdin_save;
 
 	signal(SIGINT, signal_hdoc);
 	cur = head;
