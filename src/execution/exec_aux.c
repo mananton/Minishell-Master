@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:14 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/05 10:46:50 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/09 15:09:08 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	wait_forks(t_big *v, int *pid_lst, int pid_counter, t_cmd *cmds)
 	i = -1;
 	while (++i < pid_counter)
 	{
+		printf("\n\ni=%d\n\n", i + 1);
 		waitpid(pid_lst[i], &status, 0);
 		if (WIFSIGNALED(status))
 		{

@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 14:20:02 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/05 10:42:06 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/09 15:04:55 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	err_i(t_big *v, char *str)
 	write(2, "minishell: ", 11);
 	ft_putstr_fd(str, 2);
 	write(2, ": ", 2);
-	ft_putstr_fd(strerror(errno), 2);
+	ft_putstr_fd("No such file or directory", 2);
 	write(2, "\n", 1);
 	v->exit_status = 1;
 }

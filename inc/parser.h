@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 04:15:46 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/10/21 11:56:09 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/09 14:49:44 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_redir
 	bool			hdoc_created;
 	t_token_type	type;
 	char			*filename;
+	bool			check_failed;
 	struct s_redir	*next;
 }				t_redir;
 

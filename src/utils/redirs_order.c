@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 10:35:11 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/10/17 11:52:41 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/09 15:06:33 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	open_input_fd(t_big *v, t_redir *r)
 {
 	int	fd;
 
-	if (r->type == T_HEREDOC && !r->hdoc_created)
+	if ((r->type == T_HEREDOC && !r->hdoc_created) || r->check_failed)
 	{
 		error_output(v, 'i', r->filename);
 		return (-1);

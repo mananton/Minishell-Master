@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execution.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 04:15:56 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/08 19:27:15 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/09 13:59:36 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 void	wait_forks(t_big *v, int *pid_lst, int pid_counter, t_cmd *cmds);
 void	wait_one_pid(t_big *v, pid_t pid, t_cmd *cmd);
 void	cmd_selector(t_big *v, char **argv, bool in_pipe);
-void	handle_child_pipe(t_big *v, int prev_fd, int *pipefd);
+void	handle_child_pipe(t_big *v, t_cmd *cmd, int prev_fd, int *pipefd);
 void	failed_fork(t_big *v, int *prev_fd, int *pipefd);
 void	main_signal_handler(int signal);
 int		go_fork_single(t_big *v, t_cmd *cmd, pid_t *pid);

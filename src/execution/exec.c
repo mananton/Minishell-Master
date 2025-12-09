@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:02 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/05 10:47:42 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/09 14:56:56 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,32 @@ static int	setup_pipe(int pipefd[2], int prev_fd)
 	return (1);
 }
 
+void	check_redirs_order(t_cmd *cmds)
+{
+	t_cmd	*cur_cmd;
+	t_redir	*cur_redir;
+	int		fd;
+
+	cur_cmd = cmds;
+	while (cur_cmd)
+	{
+		cur_redir = cur_cmd->redirs;
+		while (cur_redir)
+		{
+			if (cur_redir->type == T_IN)
+			{
+				fd = open(cur_redir->filename, O_RDONLY);
+				if (fd == -1)
+					cur_redir->check_failed = true;
+				else
+					close(fd);
+			}
+			cur_redir = cur_redir->next;
+		}
+		cur_cmd = cur_cmd->next;
+	}
+}
+
 /* moved child fork helpers to exec_fork.c */
 
 void	pipe_loop(t_big *v, t_cmd *cmds, int i)
@@ -35,6 +61,7 @@ void	pipe_loop(t_big *v, t_cmd *cmds, int i)
 	int		pipefd[2];
 	int		prev_fd;
 
+	check_redirs_order(cmds);
 	prev_fd = -1;
 	cur = cmds;
 	while (++i < cmds->n_cmds && cur)

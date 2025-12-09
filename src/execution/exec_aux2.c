@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   exec_aux2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 19:51:27 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/02 10:39:39 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/09 13:58:02 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utilities.h"
 #include "minishell.h"
+#include "execution.h"
 #include <signal.h>
 
 void	main_signal_handler(int signal)
@@ -37,32 +38,27 @@ int	save_std_fds(int *in, int *out)
 	return (1);
 }
 
-void	handle_child_pipe(t_big *v, int prev_fd, int *pipefd)
+void	handle_child_pipe(t_big *v, t_cmd *cmd, int prev_fd, int *pipefd)
 {
-	if (prev_fd != -1)
+	if (prev_fd != -1 && !has_input(cmd))
 	{
 		if (dup2(prev_fd, 0) == -1)
-		{
-			perror("child dup2 in");
-			close(prev_fd);
-			close(pipefd[0]);
-			close(pipefd[1]);
 			exit_child(v, 0);
-		}
-		close(prev_fd);
 	}
+	if (prev_fd != -1)
+		close(prev_fd);
 	if (!v->last_pipe)
 	{
 		close(pipefd[0]);
-		if (dup2(pipefd[1], 1) == -1)
+		if (!has_output(cmd))
 		{
-			perror("child dup2 out");
-			close(pipefd[0]);
-			exit_child(v, 0);
+			if (dup2(pipefd[1], 1) == -1)
+				exit_child(v, 0);
 		}
 		close(pipefd[1]);
 	}
 }
+
 
 void	restore_std_fds(int in, int out)
 {

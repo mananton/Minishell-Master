@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirections.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 11:46:36 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/09/09 16:47:50 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/09 14:51:27 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ t_redir	*new_redirect(t_token_type type, char *filename)
 	if (!new_redir)
 		return (NULL);
 	new_redir->type = type;
+	new_redir->check_failed = false;
 	if (new_redir->type == T_HEREDOC)
 		new_redir->expand = has_quotes_hdoc(filename);
 	new_redir->filename = remove_quotes(filename);
