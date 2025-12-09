@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:52:41 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/09/14 08:37:27 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/09 15:30:30 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	check_tmp_path(t_big *v, char *tmp_path)
 
 static	int	get_tmp_path(t_big *v, char *path, char **tmp_path)
 {
-	if (!path || !ft_strcmp(path, "-"))
+	if (!path || !ft_strcmp(path, "-") || !ft_strcmp(path, "~"))
 	{
 		if (!get_path_cd(v, path, tmp_path))
 			return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd_aux.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:11:11 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/10/21 13:37:20 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/09 15:31:09 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int	get_path_cd(t_big *v, char *path, char **tmp_path)
 {
-	if (!path)
+	if (!path || (path[0] == '~' && (path[1] == '/' || path[1] == '\0')))
 	{
 		*tmp_path = get_env_value(v->env, "HOME");
 		if (!tmp_path)

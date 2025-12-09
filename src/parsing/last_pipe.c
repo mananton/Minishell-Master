@@ -6,7 +6,7 @@
 /*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 18:19:00 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/09 10:28:48 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/09 15:28:19 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static int	add_new_input(t_big *v, char **line, char *new_input)
 {
 	char	*tmp;
 
-	if (!ft_strlen(new_input))
+	if (!new_input)
 	{
-		write(2, "minishell: unexpected end of file\n", 34);
+		write(2, "\nminishell: unexpected end of file\n", 35);
 		write(2, "exit\n", 5);
 		v->exit = 1;
 		free(new_input);
@@ -45,14 +45,27 @@ void	last_pipe_signal(int signal)
 	rl_done = 1;
 }
 
-int	read_last_pipe(t_big *v, char **line)
+char	*go_read_new_input(void)
 {
 	char	*new_input;
 
 	signal(SIGINT, last_pipe_signal);
 	new_input = readline(":> ");
+	while (new_input && ft_strisspace(new_input) && !g_signal)
+	{
+		free(new_input);
+		new_input = readline(":> ");
+	}
 	signal(SIGINT, main_signal_handler);
-	if (g_signal || !new_input)
+	return (new_input);
+}
+
+int	read_last_pipe(t_big *v, char **line)
+{
+	char	*new_input;
+
+	new_input = go_read_new_input();
+	if (g_signal)
 	{
 		ft_free(new_input);
 		return (0);
