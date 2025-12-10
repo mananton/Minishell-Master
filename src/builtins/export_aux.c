@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export_aux.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 08:17:06 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/09/12 12:56:54 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/10 12:56:53 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,30 +55,25 @@ static void	export_wrong(t_big *v, char *str)
 	v->exit_status = 1;
 }
 
-static int	check_export_input(t_big *v, char **argv, char c)
+int	check_export_input(t_big *v, char *argv, char c)
 {
 	int	i;
-	int	j;
 
-	i = 0;
-	while (argv[++i])
+	if (argv[0] != '_' && !ft_isalpha(argv[0]))
 	{
-		if (argv[i][0] != '_' && !ft_isalpha(argv[i][0]))
+		export_wrong(v, argv);
+		return (1);
+	}
+	i = -1;
+	while (argv[++i] && argv[i] != c)
+	{
+		if (!ft_isalnum(argv[i]) && argv[i] != '_')
 		{
-			export_wrong(v, argv[i]);
-			return (0);
-		}
-		j = -1;
-		while (argv[i][++j] && argv[i][j] != c)
-		{
-			if (!ft_isalnum(argv[i][j]) && argv[i][j] != '_')
-			{
-				export_wrong(v, argv[i]);
-				return (0);
-			}
+			export_wrong(v, argv);
+			return (1);
 		}
 	}
-	return (1);
+	return (0);
 }
 
 int	check_print_env_export(t_big *v, char **argv, bool in_pipe)
@@ -99,10 +94,5 @@ int	check_print_env_export(t_big *v, char **argv, bool in_pipe)
 		}
 		return (1);
 	}
-	else if (i > 1)
-		if (!check_export_input(v, argv, '='))
-			return (1);
-	if (in_pipe == true)
-		return (1);
 	return (0);
 }

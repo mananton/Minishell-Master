@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:54:56 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/05 10:38:34 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/10 12:58:02 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ static int	get_arr_export(char **argv, char **arr, int i)
 
 int	ft_export(t_big *v, char **argv, bool in_pipe)
 {
-	char	*arr[2];
 	int		i;
 	int		check;
 
@@ -84,16 +83,9 @@ int	ft_export(t_big *v, char **argv, bool in_pipe)
 	if (check)
 		return (check);
 	i = 0;
-	while (argv[++i])
+	while (argv[++i] && !g_signal)
 	{
-		check = get_arr_export(argv, arr, i);
-		if (check)
-			return (check);
-		check = check_env_key(v, arr[0], arr[1]);
-		if (!check)
-			check = add_env(v, arr);
-		free_set(v, arr);
-		if (check == -1)
+		if (process_export_arg(v, argv, i, in_pipe) == -1)
 			return (-1);
 	}
 	return (1);
