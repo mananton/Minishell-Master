@@ -37,6 +37,7 @@ SRC 	=	main.c \
 			parsing/create_tokens_word.c \
 			parsing/create_tokens.c \
 			parsing/expand_word.c \
+			parsing/expand_aux.c \
 			parsing/expand.c \
 			parsing/free_parse.c \
 			parsing/last_pipe.c \

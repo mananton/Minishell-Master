@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_messages.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:25:42 by mananton          #+#    #+#             */
-/*   Updated: 2025/12/09 15:22:19 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/10 10:37:51 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 void	broken_pipe_if_needed(int status)
 {
 	int	sig;
-	int tester_mode;
+	int	tester_mode;
 
 	tester_mode = 0;
 	if (tester_mode == 0)

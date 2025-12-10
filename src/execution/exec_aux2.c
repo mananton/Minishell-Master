@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_aux2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 19:51:27 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/09 13:58:02 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/10 10:37:18 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	handle_child_pipe(t_big *v, t_cmd *cmd, int prev_fd, int *pipefd)
 		close(pipefd[1]);
 	}
 }
-
 
 void	restore_std_fds(int in, int out)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 04:15:46 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/09 14:49:44 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/10 10:47:16 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int			make_tokens(t_parse *parse, const char *str);
 int			handle_dollar(t_big *v, char **str, int *start);
 void		handle_quotes(char c, bool *in_q, bool *in_dq);
 char		*expand_word(t_big *v, char *str);
+int			rem_dollar(char **str, int *start);
+int			process_dollar(t_big *v, char **str, int *i, bool in_dq);
 int			expand_tokens(t_parse *parse, t_big *v);
 char		*remove_quotes(char	*content);
 int			is_redirection(t_token_type type);
