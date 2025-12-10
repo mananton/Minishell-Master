@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 14:20:02 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/09 15:04:55 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/10 13:31:14 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,15 @@ void	err_h(t_big *v, char *str)
 	v->exit_status = 1;
 }
 
-static void	err_i(t_big *v, char *str)
+static void	err_i(t_big *v, char *str, int flag)
 {
 	write(2, "minishell: ", 11);
 	ft_putstr_fd(str, 2);
 	write(2, ": ", 2);
-	ft_putstr_fd("No such file or directory", 2);
+	if (flag)
+		ft_putstr_fd(strerror(errno), 2);
+	else
+		ft_putstr_fd("No such file or directory", 2);
 	write(2, "\n", 1);
 	v->exit_status = 1;
 }
@@ -58,7 +61,9 @@ void	error_output(t_big *v, char type, char *str)
 	else if (type == 'h')
 		err_h(v, str);
 	else if (type == 'i')
-		err_i(v, str);
+		err_i(v, str, 1);
+	else if (type == 'j')
+		err_i(v, str, 0);
 	else if (type == 'x')
 	{
 		write(2, "minishell: ", 11);

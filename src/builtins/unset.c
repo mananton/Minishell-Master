@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   unset.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:56:37 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/09/11 19:37:06 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/10 14:16:42 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "minishell.h"
 
-static void	free_node(t_env *cur)
+void	free_node(t_env *cur)
 {
 	ft_free(cur->key);
 	ft_free(cur->content);

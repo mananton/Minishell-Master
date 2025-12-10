@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   heredoc_aux.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 12:39:21 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/09 09:53:00 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/10 14:27:49 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,8 @@ char	*hdoc_filename(char *eof)
 {
 	char			*i;
 	char			*filename;
-	static int		nbr;
+	static int		nbr = -1;
 
-	nbr = -1;
 	i = ft_itoa(++nbr);
 	if (!i)
 		return (NULL);

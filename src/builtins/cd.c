@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:52:41 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/09 15:30:30 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/10 14:37:47 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,22 @@ static	int	get_tmp_path(t_big *v, char *path, char **tmp_path)
 		return (0);
 	}
 	return (1);
+}
+
+static int	change_dir(t_big *v, char *tmp_path)
+{
+	int		ret;
+
+	ret = 0;
+	if (!chdir(tmp_path))
+		ret = save_path(v, tmp_path);
+	else
+	{
+		perror("cd");
+		v->exit_status = 1;
+	}
+	ft_free(tmp_path);
+	return (ret);
 }
 
 static int	check_exec_cd(t_big *v, char *path, bool in_pipe)

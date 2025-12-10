@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   commands.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:51:55 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 13:13:36 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/10 14:37:17 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "minishell.h"
 
 int		get_path_cd(t_big *v, char *path, char **tmp_path);
-int		change_dir(t_big *v, char *tmp_path);
+int		save_path(t_big *v, char *tmp_path);
 int		ft_cd(t_big *v, char **argv, bool in_pipe);
 
 void	ft_echo(t_big *v, char **argv);
@@ -35,6 +35,7 @@ int		ft_export(t_big *v, char **argv, bool in_pipe);
 
 void	ft_pwd(t_big *v);
 
+void	free_node(t_env *cur);
 void	ft_unset(t_big *v, t_env **head, char **argv, bool in_pipe);
 
 char	*path_creation(t_big *v, char *path, char *cmd);
