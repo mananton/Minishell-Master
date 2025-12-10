@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execve.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:54:28 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/05 10:57:26 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/10 11:30:47 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,6 @@ int	ft_execve(t_big *v, char **argv)
 	if (check)
 		exit_child(v, 1);
 	v->exit_status = 127;
+	error_output(v, 'x', argv[0]);
 	return (1);
 }

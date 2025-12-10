@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_aux.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:14 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/09 15:09:08 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/10 11:37:32 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,28 @@ int	has_output(t_cmd *cmd)
 	return (0);
 }
 
-void	wait_forks(t_big *v, int *pid_lst, int pid_counter, t_cmd *cmds)
+void	broken_pipe_if_needed(int status)
+{
+	int	sig;
+	int	tester_mode;
+
+	tester_mode = 0;
+	if (tester_mode == 0)
+		return ;
+	if (WIFSIGNALED(status))
+	{
+		sig = WTERMSIG(status);
+		if (sig == SIGPIPE)
+			write(2, " Broken pipe\n", 13);
+	}
+	else if (WIFEXITED(status))
+	{
+		if (WEXITSTATUS(status) == 128 + SIGPIPE)
+			write(2, " Broken pipe\n", 13);
+	}
+}
+
+void	wait_forks(t_big *v, int *pid_lst, int pid_counter)
 {
 	int	status;
 	int	sig;
@@ -53,7 +74,6 @@ void	wait_forks(t_big *v, int *pid_lst, int pid_counter, t_cmd *cmds)
 	i = -1;
 	while (++i < pid_counter)
 	{
-		printf("\n\ni=%d\n\n", i + 1);
 		waitpid(pid_lst[i], &status, 0);
 		if (WIFSIGNALED(status))
 		{
@@ -61,15 +81,12 @@ void	wait_forks(t_big *v, int *pid_lst, int pid_counter, t_cmd *cmds)
 			v->exit_status = 128 + sig;
 		}
 		else if (WIFEXITED(status))
-		{
 			v->exit_status = WEXITSTATUS(status);
-			write_error(v, cmds, i);
-		}
 		broken_pipe_if_needed(status);
 	}
 }
 
-void	wait_one_pid(t_big *v, pid_t pid, t_cmd *cmd)
+void	wait_one_pid(t_big *v, pid_t pid)
 {
 	int	status;
 	int	sig;
@@ -82,9 +99,6 @@ void	wait_one_pid(t_big *v, pid_t pid, t_cmd *cmd)
 		v->exit_status = 128 + sig;
 	}
 	else if (WIFEXITED(status))
-	{
 		v->exit_status = WEXITSTATUS(status);
-		write_error(v, cmd, 0);
-	}
 	broken_pipe_if_needed(status);
 }
