@@ -6,7 +6,7 @@
 /*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:54:56 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 12:58:02 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/10 13:13:48 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,6 @@
 #include "utilities.h"
 #include "commands.h"
 #include "libft.h"
-
-static int	add_env(t_big *v, char **content)
-{
-	t_env	*tmp;
-
-	tmp = new_env_node(ft_strdup(content[0]), ft_strdup(content[1]));
-	if (!add_env_node(&v->env, tmp))
-		return (-1);
-	v->exit_status = 0;
-	return (1);
-}
 
 static char	*get_key(char *str, char c)
 {
@@ -55,21 +44,44 @@ static int	find_char(char **content, char *s, char c)
 	return (i);
 }
 
-static int	get_arr_export(char **argv, char **arr, int i)
+static int	get_arr_export(char *argv, char **arr)
 {
 	int	check;
 
-	arr[0] = get_key(argv[i], '=');
+	arr[0] = get_key(argv, '=');
 	if (!arr[0])
 		return (-1);
-	check = find_char(arr, argv[i], '=');
+	check = find_char(arr, argv, '=');
 	if (!check)
 		return (1);
-	arr[1] = ft_substr(argv[i], check + 1, ft_strlen(argv[i]));
+	arr[1] = ft_substr(argv, check + 1, ft_strlen(argv));
 	if (!arr[1])
 	{
 		ft_free(arr[0]);
 		return (-1);
+	}
+	return (0);
+}
+
+int	process_export_arg(t_big *v, char *argv, bool in_pipe)
+{
+	char	*arr[2];
+	int		check;
+
+	check = check_export_input(v, argv, '=');
+	if (!check && !in_pipe)
+	{
+		check = get_arr_export(argv, arr);
+		if (check == -1)
+			return (-1);
+		else if (check == 1)
+			return (0);
+		check = check_env_key(v, arr[0], arr[1]);
+		if (!check)
+			check = add_env(v, arr);
+		free_set(v, arr);
+		if (check == -1)
+			return (-1);
 	}
 	return (0);
 }
@@ -85,7 +97,7 @@ int	ft_export(t_big *v, char **argv, bool in_pipe)
 	i = 0;
 	while (argv[++i] && !g_signal)
 	{
-		if (process_export_arg(v, argv, i, in_pipe) == -1)
+		if (process_export_arg(v, argv[i], in_pipe) == -1)
 			return (-1);
 	}
 	return (1);

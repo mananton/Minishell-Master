@@ -6,7 +6,7 @@
 /*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 09:13:05 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/10 12:58:06 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/10 13:13:22 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,25 +69,13 @@ int	dup_sort_env(t_env *env, t_env **dup_env)
 	return (0);
 }
 
-int	process_export_arg(t_big *v, char *argv, int i, bool in_pipe)
+int	add_env(t_big *v, char **content)
 {
-	char	*arr[2];
-	int		check;
+	t_env	*tmp;
 
-	check = check_export_input(v, argv[i], '=');
-	if (!check && !in_pipe)
-	{
-		check = get_arr_export(argv, arr, i);
-		if (check == -1)
-			return (-1);
-		else if (check == 1)
-			return (0);
-		check = check_env_key(v, arr[0], arr[1]);
-		if (!check)
-			check = add_env(v, arr);
-		free_set(v, arr);
-		if (check == -1)
-			return (-1);
-	}
-	return (0);
+	tmp = new_env_node(ft_strdup(content[0]), ft_strdup(content[1]));
+	if (!add_env_node(&v->env, tmp))
+		return (-1);
+	v->exit_status = 0;
+	return (1);
 }
