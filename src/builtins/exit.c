@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 16:08:26 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/09/12 12:56:54 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/10 16:43:13 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int	check_exit_input(t_big *v, char *str)
 	}
 	if (str[i] == '+' || str[i] == '-')
 		i++;
-	while (str[i] && i < j - 1)
+	while (str[i] && i < j)
 	{
 		if (!ft_isdigit(str[i]) && !g_signal)
 		{
@@ -73,36 +73,40 @@ static int	check_exit_input(t_big *v, char *str)
 	return (1);
 }
 
-static int	check_exit(t_big *v, char **argv)
+static int	check_exit(t_big *v, char **argv, int i)
 {
 	long long	exit_ccode;
-	int			i;
 	int			j;
+	int			check;
 
-	i = 0;
 	j = 0;
-	while (argv[i])
-		i++;
+	if (i == 1)
+		return (1);
+	check = check_exit_input(v, argv[1]);
+	if (!check)
+		return (1);
 	if (i > 2 && !g_signal)
 	{
-		write(2, " too many arguments\n", 20);
+		write(2, "minishell: exit: too many arguments\n", 36);
 		v->exit_status = 1;
 		return (0);
 	}
-	if (i == 2 && check_exit_input(v, argv[1]))
-	{
-		exit_ccode = ft_atoil(argv[1], &j);
-		if (j && !g_signal)
-			err_exit(v, argv[1]);
-		else
-			v->exit_ccode = exit_ccode;
-	}
+	exit_ccode = ft_atoil(argv[1], &j);
+	if (j && !g_signal)
+		err_exit(v, argv[1]);
+	else
+		v->exit_ccode = exit_ccode;
 	return (1);
 }
 
 int	ft_exit(t_big *v, char **argv, bool in_pipe)
 {
-	if (!check_exit(v, argv))
+	int	i;
+
+	i = 0;
+	while (argv[i])
+		i++;
+	if (!check_exit(v, argv, i))
 		return (0);
 	if (in_pipe || g_signal)
 	{

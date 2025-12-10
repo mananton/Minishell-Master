@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:01:01 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/09 11:57:35 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/10 15:45:38 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void	input_loop(t_big *v, char *input)
 			v->parsed = parsed;
 			input_loop_extra(v, parsed);
 		}
-		else
+		else if (!v->exit)
 			printf("Parsing error: %d\n", parsed->error);
 	}
 	free_parsed(parsed);

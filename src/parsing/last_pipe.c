@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   last_pipe.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 18:19:00 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/09 15:28:19 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/10 16:04:02 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ static int	add_new_input(t_big *v, char **line, char *new_input)
 
 	if (!new_input)
 	{
-		write(2, "\nminishell: unexpected end of file\n", 35);
+		write(2, "minishell: unexpected end of file\n", 35);
 		write(2, "exit\n", 5);
 		v->exit = 1;
+		v->exit_status = 2;
 		free(new_input);
 		return (0);
 	}

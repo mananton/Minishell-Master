@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execve.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:54:28 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 11:30:47 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/10 16:13:02 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ static void	execve_absolute_path(t_big *v, char **argv)
 		execve_with_env(v, argv);
 	}
 	v->exit_status = 127;
+	error_output(v, 'x', argv[0]);
 	exit_child(v, 0);
 }
 

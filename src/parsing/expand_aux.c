@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expand_aux.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 10:38:34 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 10:49:48 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/10 15:33:41 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	rem_dollar(char **str, int *start)
 	tmp1 = ft_substr(s, 0, *start);
 	if (!tmp1)
 		return (0);
-	tmp2 = ft_strjoin(tmp1, s + *start + 2);
+	tmp2 = ft_strjoin(tmp1, s + *start + 1);
 	free(tmp1);
 	if (!tmp2)
 		return (0);
@@ -85,6 +85,11 @@ int	process_dollar(t_big *v, char **str, int *i, bool in_dq)
 			return (0);
 	}
 	else if ((*str)[*i + 1] == '\"' && !in_dq)
+	{
+		if (!rem_dollar(str, i))
+			return (0);
+	}
+	else if ((*str)[*i + 1] == '\'' && !in_dq)
 	{
 		if (!rem_dollar(str, i))
 			return (0);
