@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 10:35:11 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/10 13:33:14 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:08:59 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int	apply_redirs(t_big *v, t_cmd *cmd)
 		{
 			if (!apply_output_redir(v, cur))
 				return (0);
+			v->has_redir_check = 1;	
 		}
 		cur = cur->next;
 	}

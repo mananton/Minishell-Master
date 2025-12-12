@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 14:20:02 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/10 13:31:14 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:03:09 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ void	error_output(t_big *v, char type, char *str)
 		err_i(v, str, 0);
 	else if (type == 'x')
 	{
-		write(2, "minishell: ", 11);
-		ft_putstr_fd(str, 2);
-		write(2, ": ", 2);
-		write(2, "command not found", 17);
-		write(2, "\n", 1);
+		write(1, "minishell: ", 11);
+		ft_putstr_fd(str, 1);
+		write(1, ": ", 2);
+		write(1, "command not found", 17);
+		write(1, "\n", 1);
 	}
 }

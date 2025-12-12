@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:01:01 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 15:45:38 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:07:27 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static int	struct_init(t_big *v, char **envp)
 	if (!v->pwd)
 		return (0);
 	v->exit = 0;
+	v->has_redir_check = 0;
 	v->exit_status = 0;
 	v->exit_ccode = 0;
 	v->temp_path = ft_strdup("/tmp/");

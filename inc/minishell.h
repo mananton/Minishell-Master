@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 04:15:52 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 15:04:27 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:06:27 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_big
 {
 	char		*temp_path;
 	bool		check_hdoc;
+	int		    has_redir_check;
 	int			exit;
 	int			exit_status;
 	long long	exit_ccode;
