@@ -6,7 +6,7 @@
 /*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 04:15:40 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/02 10:56:40 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:16:11 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int		apply_redirs(t_big *v, t_cmd *cmd);
 
 int		ft_strisspace(const char *str);
 void	read_signal_handler(int signal);
+void	error_x(t_big *v, char *str);
 void	error_output(t_big *v, char type, char *str);
 int		save_std_fds(int *in, int *out);
 void	restore_std_fds(int in, int out);

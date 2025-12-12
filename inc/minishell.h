@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 04:15:52 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/12 12:06:27 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:12:41 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_big
 {
 	char		*temp_path;
 	bool		check_hdoc;
-	int		    has_redir_check;
+	int			has_redir_check;
 	int			exit;
 	int			exit_status;
 	long long	exit_ccode;
