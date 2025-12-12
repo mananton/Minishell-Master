@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 16:06:42 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/10/17 11:48:10 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/12 14:42:37 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 static int	skip_spaces(char *line, int i)
 {
-	while (line[i] && ft_isspace(line[i]))
+	while (line[i] && ft_isspace(line[i]) && line[i] != '\n')
 		i++;
 	return (i);
 }
@@ -28,10 +28,26 @@ static int	check_in_out(char *line, int *i)
 	if (line[*i] == line[(*i) - 1])
 		(*i)++;
 	*i = skip_spaces(line, *i);
-	if (line[*i] == '\0' || line[*i] == '|')
+	if (line[*i] == '\n' || line[*i] == '\0')
+	{
+		write(2, "minishell: syntax error near", 28);
+		write(2, " unexpected token `newline'\n", 28);
 		return (0);
+	}
+	if (line[*i] == '|')
+	{
+		write(2, "minishell: syntax error near unexpected token `|'\n", 50);
+		return (0);
+	}
 	if (line[*i] == '<' || line[*i] == '>')
+	{
+		write(2, "minishell: syntax error near unexpected token `", 47);
+		if (line[*i] == line[(*i) + 1])
+			ft_putchar_fd(line[*i], 2);
+		ft_putchar_fd(line[*i], 2);
+		write(2, "'\n", 2);
 		return (0);
+	}
 	return (1);
 }
 
@@ -40,8 +56,11 @@ static int	check_pipe(t_big *v, char **line, int *i)
 	(*i)++;
 	*i = skip_spaces(*line, *i);
 	if ((*line)[*i] == '|')
+	{
+		write(2, "minishell: syntax error near unexpected token `|'\n", 50);
 		return (0);
-	if ((*line)[*i] == '\0')
+	}
+	if ((*line)[*i] == '\0' || (*line)[*i] == '\n')
 		if (!read_last_pipe(v, line))
 			return (0);
 	return (1);

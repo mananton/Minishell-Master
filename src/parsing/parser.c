@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:58:20 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/09 10:16:56 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/12 14:36:49 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 
-static t_parse	*assign_error(t_parse *parse, int i)
+static t_parse	*assign_error(t_big *v, t_parse *parse, int i)
 {
-	if (i != 0)
-		parse->error = i;
+	parse->error = i;
+	v->exit_status = 2;
 	return (parse);
 }
 
@@ -39,16 +39,16 @@ t_parse	*parse(t_big *v, char *input)
 	if (!validate(v, &input))
 	{
 		add_history(input);
-		return (free(input), assign_error(parse, 1));
+		return (free(input), assign_error(v, parse, 1));
 	}
 	add_history(input);
 	if (!make_tokens(parse, input))
-		return (free(input), assign_error(parse, 2));
+		return (free(input), assign_error(v, parse, 2));
 	free(input);
 	if (!expand_tokens(parse, v))
-		return (assign_error(parse, 3));
+		return (assign_error(v, parse, 3));
 	parse->cmds = parse_cmd(parse->tokens);
 	if (!parse->cmds)
-		return (assign_error(parse, 4));
+		return (assign_error(v, parse, 4));
 	return (parse);
 }
