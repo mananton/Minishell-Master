@@ -4,6 +4,9 @@
 		"readline.h": "c",
 		"minishell.h": "c",
 		"execution.h": "c",
-		"history.h": "c"
+		"history.h": "c",
+		"libft.h": "c",
+		"utilities.h": "c",
+		"commands.h": "c"
 	}
 }

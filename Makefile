@@ -13,6 +13,7 @@ LIBFT_DIR = $(LIB_DIR)libft/
 
 SRC 	=	main.c \
 			builtins/cd_aux.c \
+			builtins/cd_aux2.c \
 			builtins/cd.c \
 			builtins/echo.c \
 			builtins/env.c \
@@ -95,6 +96,10 @@ $(NAME): $(OBJS) $(LIBFT)
 	@echo "$(BOLD)$(YELLOW)Creating program$(RESET)"
 	$(CC) $(CFLAGS) ${INCS} $(OBJS) $(LIBFT) -o $@ $(RDLINE_FLAG) || { echo "$(RED)Failed to create program$(RESET)"; exit 1; }
 	@echo "$(BOLD)$(GREEN)Program compiled succesfully$(RESET)"
+
+libft:
+	@echo "$(BOLD)$(YELLOW)Building libft$(RESET)"
+	@$(MAKE) -C $(LIBFT_DIR)
 
 clean:
 	@if [ -d $(OBJ_DIR) ] || [ -d $(DEP_DIR) ]; then \

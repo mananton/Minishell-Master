@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:52:41 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 14:37:47 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/14 23:10:29 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,14 @@ static int	check_tmp_path(t_big *v, char *tmp_path)
 
 static	int	get_tmp_path(t_big *v, char *path, char **tmp_path)
 {
-	if (!path || !ft_strcmp(path, "-") || !ft_strcmp(path, "~"))
+	if (!path || !ft_strncmp(path, "~", 1))
 	{
-		if (!get_path_cd(v, path, tmp_path))
+		if (!get_path_tilde(v, path, tmp_path))
+			return (0);
+	}
+	else if (!ft_strncmp(path, "-", 1))
+	{
+		if (!get_path_oldpwd(v, path, tmp_path))
 			return (0);
 	}
 	else if (!ft_strlen(path))
@@ -103,7 +108,7 @@ int	ft_cd(t_big *v, char **argv, bool in_pipe)
 		return (1);
 	}
 	ret = check_exec_cd(v, argv[1], in_pipe);
-	if (ret == -1)
+	if (ret == -1 && in_pipe)
 		exit_child(v, 1);
 	return (ret);
 }

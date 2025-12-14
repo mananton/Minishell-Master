@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   commands.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:51:55 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 14:37:17 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/14 22:24:32 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include "parser.h"
 # include "minishell.h"
 
-int		get_path_cd(t_big *v, char *path, char **tmp_path);
+int		get_path_oldpwd(t_big *v, char *path, char **tmp_path);
+int		get_path_tilde(t_big *v, char *path, char **tmp_path);
 int		save_path(t_big *v, char *tmp_path);
 int		ft_cd(t_big *v, char **argv, bool in_pipe);
 

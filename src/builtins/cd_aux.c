@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd_aux.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:11:11 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/10 14:38:16 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/14 23:12:27 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,28 @@
 #include "commands.h"
 #include "libft.h"
 
-int	get_path_cd(t_big *v, char *path, char **tmp_path)
+int	get_path_tilde(t_big *v, char *path, char **tmp_path)
 {
-	if (!path || (path[0] == '~' && (path[1] == '/' || path[1] == '\0')))
+	char	*tmp2;
+
+	*tmp_path = get_env_value(v->env, "HOME");
+	if (!(*tmp_path))
 	{
-		*tmp_path = get_env_value(v->env, "HOME");
-		if (!tmp_path)
-		{
-			error_output(v, 'h', "HOME");
-			return (0);
-		}
-		*tmp_path = ft_strdup(*tmp_path);
+		error_output(v, 'h', "HOME");
+		return (0);
 	}
-	else if (!ft_strcmp(path, "-"))
+	tmp2 = ft_strdup(*tmp_path);
+	if (!tmp2)
+		return (0);
+	if (path)
 	{
-		*tmp_path = get_env_value(v->env, "OLDPWD");
-		if (!tmp_path)
-		{
-			error_output(v, 'h', "OLDPWD");
-			return (0);
-		}
-		*tmp_path = ft_strdup(*tmp_path);
+		*tmp_path = ft_strjoin(tmp2, path + 1);
+		free(tmp2);
 	}
+	else
+		*tmp_path = tmp2;
+	if (!(*tmp_path))
+		return (0);
 	return (1);
 }
 

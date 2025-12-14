@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expand_aux.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 10:38:34 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 15:33:41 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/14 22:05:54 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,12 @@ int	process_dollar(t_big *v, char **str, int *i, bool in_dq)
 		if (!handle_dollar(v, str, i))
 			return (0);
 	}
-	else if ((*str)[*i + 1] == '\"' && !in_dq)
+	else if (ft_isdigit((*str)[*i + 1]))
 	{
-		if (!rem_dollar(str, i))
+		if (!handle_dollar(v, str, i))
 			return (0);
 	}
-	else if ((*str)[*i + 1] == '\'' && !in_dq)
+	else if (((*str)[*i + 1] == '\"' || (*str)[*i + 1] == '\'') && !in_dq)
 	{
 		if (!rem_dollar(str, i))
 			return (0);
