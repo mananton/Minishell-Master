@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 16:06:42 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/12 14:42:37 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/14 23:36:54 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,9 @@ int	validate(t_big *v, char **line)
 
 	i = skip_spaces(*line, 0);
 	if ((*line)[i] == '|')
+	{
+		write(2, "minishell: syntax error near unexpected token `|'\n", 50);
 		return (0);
+	}
 	return (validate_scan(v, line, i));
 }
