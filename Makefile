@@ -49,8 +49,6 @@ SRC 	=	main.c \
 			parsing/validate.c \
 			utils/env_utils.c \
 			utils/env_utils2.c \
-			utils/file_input.c \
-			utils/file_output.c \
 			utils/free_utils.c \
 			utils/heredoc.c \
 			utils/heredoc_aux.c \
