@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 04:15:46 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 15:28:34 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/15 14:01:11 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int			is_redirection(t_token_type type);
 int			read_last_pipe(t_big *v, char **line);
 t_redir		*new_redirect(t_token_type type, char *filename);
 int			add_redirect(t_redir **head, t_redir *node);
+int			check_cmd_split(t_cmd *cmd, char *content, int i, int j);
 int			parse_cmd_aux(char *content);
 t_cmd		*parse_cmd(t_token *head);
 void		free_parsed(t_parse *parsed);

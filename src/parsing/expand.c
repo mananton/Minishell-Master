@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expand.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:41 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 15:33:53 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/15 13:53:33 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,22 @@ void	handle_quotes(char c, bool *in_q, bool *in_dq)
 		*in_dq = !(*in_dq);
 }
 
+int	expand_home(t_big *v, char **str)
+{
+	char	*home;
+	char	*tmp;
+
+	home = get_env_value(v->env, "HOME");
+	if (!home)
+		return (0);
+	tmp = ft_strjoin(home, *str + 1);
+	free(home);
+	if (!tmp)
+		return (-1);
+	*str = tmp;
+	return (1);
+}
+
 char	*expand_word(t_big *v, char *str)
 {
 	bool	in_q;
@@ -32,6 +48,11 @@ char	*expand_word(t_big *v, char *str)
 	in_q = false;
 	in_dq = false;
 	i = -1;
+	if (str[0] == '~' && expand_home(v, &str))
+	{
+		if (!str)
+			return (NULL);
+	}
 	while (str[++i])
 	{
 		handle_quotes(str[i], &in_q, &in_dq);
