@@ -6,7 +6,7 @@
 /*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 11:53:19 by mananton          #+#    #+#             */
-/*   Updated: 2025/12/15 14:01:38 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/15 14:29:13 by fheaton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "parser.h"
 #include "utilities.h"
 
-static int get_argv_count(t_cmd *cmd)
+static int	get_argv_count(t_cmd *cmd)
 {
 	int	i;
 
