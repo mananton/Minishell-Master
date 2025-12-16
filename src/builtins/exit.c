@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 16:08:26 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/10 16:43:13 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:28:03 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ static int	check_exit(t_big *v, char **argv, int i)
 	return (1);
 }
 
-int	ft_exit(t_big *v, char **argv, bool in_pipe)
+int	ft_exit(t_big *v, char **argv)
 {
 	int	i;
 
@@ -108,7 +108,7 @@ int	ft_exit(t_big *v, char **argv, bool in_pipe)
 		i++;
 	if (!check_exit(v, argv, i))
 		return (0);
-	if (in_pipe || g_signal)
+	if (g_signal)
 	{
 		v->exit_ccode = 0;
 		return (1);

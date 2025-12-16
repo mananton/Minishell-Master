@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:50:54 by mananton          #+#    #+#             */
-/*   Updated: 2025/12/09 13:58:45 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/16 13:53:34 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,6 @@
 #include "utilities.h"
 #include <signal.h>
 
-static char	**skip_leading_empty(char **argv)
-{
-	if (!argv)
-		return (NULL);
-	while (argv[0] && argv[0][0] == '\0')
-		argv++;
-	return (argv);
-}
-
 static void	child_fork(t_big *v, t_cmd *cmd, int prev_fd, int *pipefd)
 {
 	signal(SIGINT, main_signal_handler);
@@ -31,7 +22,7 @@ static void	child_fork(t_big *v, t_cmd *cmd, int prev_fd, int *pipefd)
 	handle_child_pipe(v, cmd, prev_fd, pipefd);
 	if (!apply_redirs(v, cmd))
 		exit_child(v, 0);
-	cmd_selector(v, skip_leading_empty(cmd->argv), true);
+	cmd_selector(v, cmd->argv, true);
 	exit_child(v, 0);
 }
 

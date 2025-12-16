@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:56:37 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 14:16:42 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:32:17 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ static void	unset_cmp(t_env **head, char **argv, int i)
 	}
 }
 
-void	ft_unset(t_big *v, t_env **head, char **argv, bool in_pipe)
+void	ft_unset(t_big *v, t_env **head, char **argv)
 {
 	int		i;
 
 	i = 0;
-	if (!check_unset_input(v, argv, '=') || in_pipe)
+	if (!check_unset_input(v, argv, '='))
 		return ;
 	while (argv[++i])
 		unset_cmp(head, argv, i);
