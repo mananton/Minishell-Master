@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expand.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:41 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/17 11:15:00 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/17 15:59:52 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	expand_tokens(t_parse *parse, t_big *v)
 			v->check_hdoc = true;
 		else
 		{
-			if (cur->type == T_WORD)
+			if (cur->type == T_WORD && !v->check_hdoc)
 			{
 				tmp = expand_word(v, cur->content);
 				if (!tmp)

@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 12:39:21 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/10 14:27:49 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/17 16:09:35 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,26 @@ int	handle_input(t_big *v, t_redir *cur, char **input)
 	return (1);
 }
 
+static void	change_slashes(char **str)
+{
+	int	i;
+
+	i = 0;
+	while ((*str)[i])
+	{
+		if ((*str)[i] == '/')
+			(*str)[i] = '_';
+		i++;
+	}
+}
+
 char	*temp_path(char *tmp, char *path)
 {
 	char	*filename;
 
 	if (!tmp)
 		return (NULL);
+	change_slashes(&tmp);
 	filename = ft_strjoin(path, tmp);
 	free(tmp);
 	if (!filename)
@@ -51,15 +65,15 @@ void	signal_hdoc(int signal)
 char	*hdoc_filename(char *eof)
 {
 	char			*i;
-	char			*filename;
+	char			*tmp;
 	static int		nbr = -1;
 
 	i = ft_itoa(++nbr);
 	if (!i)
 		return (NULL);
-	filename = ft_strjoin(eof, i);
+	tmp = ft_strjoin(eof, i);
 	ft_free(i);
-	if (!filename)
+	if (!tmp)
 		return (NULL);
-	return (filename);
+	return (tmp);
 }

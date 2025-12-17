@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 07:08:04 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/10 15:10:48 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/17 16:03:17 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,7 @@ static char	*get_val(t_big *v, const char *str, int len)
 	value = get_env_value(v->env, key);
 	free(key);
 	if (!value)
-	{
-		if (v->check_hdoc == true)
-			return (NULL);
 		return (ft_strdup(""));
-	}
 	return (ft_strdup(value));
 }
 
@@ -71,10 +67,8 @@ int	handle_dollar(t_big *v, char **str, int *start)
 	s = *str;
 	len = get_key_len(s + (*start) + 1);
 	val = get_val(v, s + (*start) + 1, len);
-	if (!val && v->check_hdoc == false)
+	if (!val)
 		return (0);
-	if (!val && v->check_hdoc == true)
-		return (1);
 	tmp = replace_var(s, val, (*start) + 1, len);
 	if (!tmp)
 	{
