@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:00:03 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/17 12:10:25 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/17 13:24:11 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,12 @@ static int	check_hdoc_cmd(t_big *v, t_redir *head)
 	t_redir	*cur;
 
 	cur = head;
-	while (cur)
+	while (cur && !g_signal)
 	{
 		if (cur->type == T_HEREDOC)
 		{
 			if (!init_heredoc(v, cur))
 				return (0);
-			if (g_signal)
-				return (1);
 		}
 		cur = cur->next;
 	}
@@ -112,13 +110,11 @@ int	check_heredoc(t_big *v, t_cmd *head)
 	int		ret;
 
 	cur = head;
-	while (cur)
+	while (cur && !g_signal)
 	{
 		ret = check_hdoc_cmd(v, cur->redirs);
 		if (!ret)
 			return (0);
-		if (g_signal)
-			return (1);
 		cur = cur->next;
 	}
 	return (1);
