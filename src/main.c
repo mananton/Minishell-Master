@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:01:01 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/17 11:54:14 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/17 13:34:26 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	input_loop_extra(t_big *v, t_parse *parsed)
 	if (!check_heredoc(v, parsed->cmds) || g_signal)
 	{
 		if (!g_signal)
-			write(2, "minishell: failed allocation while creating heredoc\n", 52);
+			write(2, " failed allocation while creating heredoc\n", 42);
 		return (delete_tmpfiles(parsed));
 	}
 	if (parsed->cmds->n_cmds > 1)
