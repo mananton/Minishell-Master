@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   heredoc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:00:03 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/09 10:01:40 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/17 12:10:25 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <signal.h>
-#include <readline/readline.h>
 #include "libft.h"
 #include "minishell.h"
+#include "parser.h"
 #include "utilities.h"
+#include "execution.h"
+#include "commands.h"
+#include <readline/readline.h>
+#include <readline/history.h>
+#include <signal.h>
+#include <errno.h>
 
 static int	write_to_hdoc(t_big *v, t_redir *cur, int fd, char *eof_str)
 {
@@ -33,7 +35,7 @@ static int	write_to_hdoc(t_big *v, t_redir *cur, int fd, char *eof_str)
 	{
 		if (ft_strlen(input) != 0)
 		{
-			if (g_signal || !handle_input(v, cur, &input))
+			if (!handle_input(v, cur, &input))
 			{
 				free(input);
 				return (0);
@@ -56,6 +58,7 @@ static int	create_hdoc_file(t_big *v, t_redir *cur, char *eof_str, char *file)
 	if (fd < 0)
 		return (0);
 	cur->hdoc_created = true;
+	signal(SIGINT, signal_hdoc);
 	if (!write_to_hdoc(v, cur, fd, eof_str))
 	{
 		close(fd);
@@ -69,15 +72,17 @@ static int	init_heredoc(t_big *v, t_redir *cur)
 {
 	char	*filename;
 	char	*tmp;
+	int		check;
 
 	tmp = hdoc_filename(cur->filename);
 	filename = temp_path(tmp, v->temp_path);
 	if (!filename)
 		return (0);
-	create_hdoc_file(v, cur, cur->filename, filename);
+	check = create_hdoc_file(v, cur, cur->filename, filename);
+	signal(SIGINT, main_signal_handler);
 	free(cur->filename);
 	cur->filename = filename;
-	if (g_signal)
+	if (!check)
 		return (0);
 	return (1);
 }
@@ -93,6 +98,8 @@ static int	check_hdoc_cmd(t_big *v, t_redir *head)
 		{
 			if (!init_heredoc(v, cur))
 				return (0);
+			if (g_signal)
+				return (1);
 		}
 		cur = cur->next;
 	}
@@ -104,13 +111,14 @@ int	check_heredoc(t_big *v, t_cmd *head)
 	t_cmd	*cur;
 	int		ret;
 
-	signal(SIGINT, signal_hdoc);
 	cur = head;
 	while (cur)
 	{
 		ret = check_hdoc_cmd(v, cur->redirs);
-		if (g_signal || !ret)
+		if (!ret)
 			return (0);
+		if (g_signal)
+			return (1);
 		cur = cur->next;
 	}
 	return (1);

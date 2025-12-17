@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:01:01 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/12 14:38:00 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/17 11:54:14 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,12 @@ static int	struct_init(t_big *v, char **envp)
 
 static void	input_loop_extra(t_big *v, t_parse *parsed)
 {
-	if (!check_heredoc(v, parsed->cmds) && !g_signal)
+	if (!check_heredoc(v, parsed->cmds) || g_signal)
 	{
-		signal(SIGINT, main_signal_handler);
-		write(2, "minishell: failed allocation while creating heredoc\n", 52);
+		if (!g_signal)
+			write(2, "minishell: failed allocation while creating heredoc\n", 52);
 		return (delete_tmpfiles(parsed));
 	}
-	signal(SIGINT, main_signal_handler);
-	if (g_signal)
-		return ;
 	if (parsed->cmds->n_cmds > 1)
 	{
 		if (!create_pid_array(v, parsed->cmds->n_cmds))
