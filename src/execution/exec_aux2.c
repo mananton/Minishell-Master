@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 19:51:27 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/16 13:15:02 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/17 14:40:44 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #include "minishell.h"
 #include "execution.h"
 #include <signal.h>
-
-void	main_signal_handler(int signal)
-{
-	g_signal = signal;
-}
 
 int	save_std_fds(int *in, int *out)
 {
@@ -38,25 +33,41 @@ int	save_std_fds(int *in, int *out)
 	return (1);
 }
 
-void	handle_child_pipe(t_big *v, t_cmd *cmd, int prev_fd, int *pipefd)
+static void	failed_dup_extra(t_big *v, t_cmd *cmd, int *pipefd)
 {
-	if (prev_fd != -1 && !has_input(cmd))
-	{
-		if (dup2(prev_fd, 0) == -1)
-			exit_child(v, 0);
-	}
-	if (prev_fd != -1)
-		close(prev_fd);
 	if (!v->last_pipe)
 	{
 		close(pipefd[0]);
 		if (!has_output(cmd))
 		{
 			if (dup2(pipefd[1], 1) == -1)
+			{
+				close(pipefd[1]);
 				exit_child(v, 0);
+			}
 		}
 		close(pipefd[1]);
 	}
+}
+
+void	handle_child_pipe(t_big *v, t_cmd *cmd, int prev_fd, int *pipefd)
+{
+	if (prev_fd != -1 && !has_input(cmd))
+	{
+		if (dup2(prev_fd, 0) == -1)
+		{
+			if (!v->last_pipe)
+			{
+				close(pipefd[0]);
+				close(pipefd[1]);
+			}
+			close(prev_fd);
+			exit_child(v, 0);
+		}
+	}
+	if (prev_fd != -1)
+		close(prev_fd);
+	failed_dup_extra(v, cmd, pipefd);
 }
 
 void	restore_std_fds(int in, int out)

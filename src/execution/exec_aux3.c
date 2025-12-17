@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_aux3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 08:25:03 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/17 11:10:10 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/17 14:37:05 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ void	failed_fork(t_big *v, int *prev_fd, int *pipefd)
 	}
 	if (*prev_fd != -1)
 		close(*prev_fd);
+}
+
+void	main_signal_handler(int signal)
+{
+	g_signal = signal;
 }
 
 int	go_fork_single(t_big *v, t_cmd *cmd, pid_t *pid)
