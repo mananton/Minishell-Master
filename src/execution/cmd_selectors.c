@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:00:51 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/17 13:32:43 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/17 14:04:20 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	builtin_exec(t_big *v, char **argv)
 	int	ret;
 
 	ret = 1;
-	if (argv[0])
+	if (argv && argv[0])
 	{
 		if (!ft_strcmp(argv[0], "cd"))
 			ret = ft_cd(v, argv, false);
@@ -46,7 +46,6 @@ int	builtin(t_big *v, t_cmd *cmd)
 {
 	int		s_in;
 	int		s_out;
-	char	**argv;
 
 	if (!save_std_fds(&s_in, &s_out))
 		return (0);
@@ -55,13 +54,7 @@ int	builtin(t_big *v, t_cmd *cmd)
 		restore_std_fds(s_in, s_out);
 		return (0);
 	}
-	argv = cmd->argv;
-	while (argv && argv[0] && argv[0][0] == '\0')
-		argv++;
-	if (argv && argv[0])
-		builtin_exec(v, argv);
-	else
-		v->exit_status = 0;
+	builtin_exec(v, cmd->argv);
 	restore_std_fds(s_in, s_out);
 	if (g_signal)
 		v->exit_status = 128 + g_signal;
@@ -99,6 +92,8 @@ int	is_builtin(t_cmd *cmd)
 
 void	cmd_selector(t_big *v, char **argv, bool in_pipe)
 {
+	if (!argv || !argv[0])
+		return ;
 	if (!ft_strcmp(argv[0], "cd"))
 		ft_cd(v, argv, in_pipe);
 	else if (!ft_strcmp(argv[0], "echo"))
