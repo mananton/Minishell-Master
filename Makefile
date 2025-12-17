@@ -31,7 +31,6 @@ SRC 	=	main.c \
 			execution/exec_aux2.c \
 			execution/exec_aux3.c \
 			execution/exec_error.c \
-			execution/exec_error2.c \
 			execution/exec.c \
 			execution/exec_fork.c \
 			parsing/create_tokens_aux.c \

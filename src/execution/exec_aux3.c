@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_aux3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fiheaton <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 08:25:03 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/05 10:25:15 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/17 11:10:10 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,22 @@ int	go_fork_single(t_big *v, t_cmd *cmd, pid_t *pid)
 		exit_child(v, 0);
 	}
 	return (1);
+}
+
+void	write_error(t_big *v, t_cmd *cmds, int i)
+{
+	t_cmd	*cur;
+	int		j;
+
+	if (v->exit_status == 0)
+		return ;
+	j = -1;
+	cur = cmds;
+	while (++j < i)
+		cur = cur->next;
+	if (v->exit_status == 127)
+	{
+		if (cmds->argv && cur->argv[0] && !ft_strchr(cur->argv[0], '/'))
+			error_output(v, 'x', cur->argv[0]);
+	}
 }

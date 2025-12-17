@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:02 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/10 11:35:39 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/17 11:13:36 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	pipe_loop(t_big *v, t_cmd *cmds, int i)
 			break ;
 		cur = cur->next;
 	}
-	wait_forks(v, v->pid_lst, v->pid_counter);
+	wait_forks(v, v->pid_lst, v->pid_counter, cmds);
 }
 
 void	exec_single(t_big *v, t_cmd *cmd)
@@ -89,5 +89,5 @@ void	exec_single(t_big *v, t_cmd *cmd)
 	}
 	if (!go_fork_single(v, cmd, &pid))
 		return ;
-	wait_one_pid(v, pid);
+	wait_one_pid(v, pid, cmd);
 }

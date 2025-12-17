@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_aux.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fiheaton <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:14 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/15 15:02:02 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/17 11:03:21 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	broken_pipe_if_needed(int status)
 	}
 }
 
-void	wait_forks(t_big *v, int *pid_lst, int pid_counter)
+void	wait_forks(t_big *v, int *pid_lst, int pid_counter, t_cmd *cmds)
 {
 	int	status;
 	int	sig;
@@ -81,12 +81,15 @@ void	wait_forks(t_big *v, int *pid_lst, int pid_counter)
 			v->exit_status = 128 + sig;
 		}
 		else if (WIFEXITED(status))
+		{
 			v->exit_status = WEXITSTATUS(status);
+			write_error(v, cmds, i);
+		}
 		broken_pipe_if_needed(status);
 	}
 }
 
-void	wait_one_pid(t_big *v, pid_t pid)
+void	wait_one_pid(t_big *v, pid_t pid, t_cmd *cmd)
 {
 	int	status;
 	int	sig;
@@ -99,5 +102,8 @@ void	wait_one_pid(t_big *v, pid_t pid)
 		v->exit_status = 128 + sig;
 	}
 	else if (WIFEXITED(status))
+	{
 		v->exit_status = WEXITSTATUS(status);
+		write_error(v, cmd, 0);
+	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
+/*   By: fiheaton <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 14:20:02 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/12 12:03:09 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/17 11:11:20 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ void	error_output(t_big *v, char type, char *str)
 	{
 		write(1, "minishell: ", 11);
 		ft_putstr_fd(str, 1);
-		write(1, ": ", 2);
-		write(1, "command not found", 17);
-		write(1, "\n", 1);
+		write(1, ": command not found\n", 20);
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expand.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fheaton-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:41 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/15 13:53:33 by fheaton-         ###   ########.fr       */
+/*   Updated: 2025/12/17 11:15:00 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	expand_home(t_big *v, char **str)
 	if (!home)
 		return (0);
 	tmp = ft_strjoin(home, *str + 1);
-	free(home);
+	free(*str);
 	if (!tmp)
-		return (-1);
+		return (0);
 	*str = tmp;
 	return (1);
 }
@@ -48,9 +48,9 @@ char	*expand_word(t_big *v, char *str)
 	in_q = false;
 	in_dq = false;
 	i = -1;
-	if (str[0] == '~' && expand_home(v, &str))
+	if (str[0] == '~' && (str[1] == '/' || str[1] == '\0'))
 	{
-		if (!str)
+		if (!expand_home(v, &str))
 			return (NULL);
 	}
 	while (str[++i])
