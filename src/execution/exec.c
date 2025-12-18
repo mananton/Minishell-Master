@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:02 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/17 11:13:36 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/18 11:13:45 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	setup_pipe(int pipefd[2], int prev_fd)
 	return (1);
 }
 
-void	check_redirs_order(t_cmd *cmds)
+static void	check_if_in_exists(t_cmd *cmds)
 {
 	t_cmd	*cur_cmd;
 	t_redir	*cur_redir;
@@ -61,7 +61,7 @@ void	pipe_loop(t_big *v, t_cmd *cmds, int i)
 	int		pipefd[2];
 	int		prev_fd;
 
-	check_redirs_order(cmds);
+	check_if_in_exists(cmds);
 	prev_fd = -1;
 	cur = cmds;
 	while (++i < cmds->n_cmds && cur)

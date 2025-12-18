@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 19:51:27 by fiheaton          #+#    #+#             */
-/*   Updated: 2025/12/17 14:40:44 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/18 11:26:49 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	failed_dup_extra(t_big *v, t_cmd *cmd, int *pipefd)
 		close(pipefd[0]);
 		if (!has_output(cmd))
 		{
-			if (dup2(pipefd[1], 1) == -1)
+			if (dup2(pipefd[1], 1) == v-1)
 			{
 				close(pipefd[1]);
 				exit_child(v, 0);

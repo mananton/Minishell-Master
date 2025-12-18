@@ -6,7 +6,7 @@
 /*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:41 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/17 15:59:52 by mananton         ###   ########.fr       */
+/*   Updated: 2025/12/18 10:53:49 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	expand_home(t_big *v, char **str)
 
 	home = get_env_value(v->env, "HOME");
 	if (!home)
-		return (0);
+		return (1);
 	tmp = ft_strjoin(home, *str + 1);
 	free(*str);
 	if (!tmp)

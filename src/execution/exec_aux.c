@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_aux.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mananton <telesmanuel@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:57:14 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/12/17 11:03:21 by fiheaton         ###   ########.fr       */
+/*   Updated: 2025/12/18 12:00:06 by mananton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	broken_pipe_if_needed(int status)
 	int	sig;
 	int	tester_mode;
 
-	tester_mode = 1;
+	tester_mode = 0;
 	if (tester_mode == 0)
 		return ;
 	if (WIFSIGNALED(status))
