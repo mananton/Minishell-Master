@@ -1,0 +1,5 @@
+--- /home/mananton/minimini2/test/results/253/bash.err	2025-12-18 12:33:25.543401505 +0000
++++ /home/mananton/minimini2/test/results/253/mini.err	2025-12-18 12:33:25.547401516 +0000
+@@ -1 +1 @@
+-syntax error: unexpected end of file
++/usr/bin/ls: cannot access '&&': No such file or directory

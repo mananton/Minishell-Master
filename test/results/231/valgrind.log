@@ -1,0 +1,35 @@
+==207077== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==207077== Open file descriptor 3: /home/mananton/minimini2/test/results/231/valgrind.log
+==207077==    <inherited from parent>
+==207077== 
+==207077== 
+pen file descriptor 3: /home/mananton/minimini2/test/results/231/valgrind.log
+==207084==    <inherited from parent>
+==207084== 
+==207084== 
+==207084== 56 bytes in 1 blocks are still reachable in loss record 1 of 4
+==207084==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==207084==    by 0x115DB8: ??? (in /usr/bin/ls)
+==207084==    by 0x115DE9: ??? (in /usr/bin/ls)
+==207084==    by 0x10D528: ??? (in /usr/bin/ls)
+==207084==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==207084== 
+==207084== 56 bytes in 1 blocks are still reachable in loss record 2 of 4
+==207084==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==207084==    by 0x115DB8: ??? (in /usr/bin/ls)
+==207084==    by 0x115DE9: ??? (in /usr/bin/ls)
+==207084==    by 0x10D132: ??? (in /usr/bin/ls)
+==207084==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==207084== 
+==207084== 128 bytes in 1 blocks are still reachable in loss record 3 of 4
+==207084==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==207084==    by 0x1138F9: ??? (in /usr/bin/ls)
+==207084==    by 0x10D236: ??? (in /usr/bin/ls)
+==207084==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==207084== 
+==207084== 20,000 bytes in 1 blocks are still reachable in loss record 4 of 4
+==207084==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==207084==    by 0x115DB8: ??? (in /usr/bin/ls)
+==207084==    by 0x10D2A0: ??? (in /usr/bin/ls)
+==207084==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==207084== 

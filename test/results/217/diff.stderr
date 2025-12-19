@@ -1,0 +1,5 @@
+--- /home/mananton/minimini2/test/results/217/bash.err	2025-12-18 12:32:55.807328969 +0000
++++ /home/mananton/minimini2/test/results/217/mini.err	2025-12-18 12:32:55.811328980 +0000
+@@ -1 +1 @@
+-hello: command not found
++: command not found

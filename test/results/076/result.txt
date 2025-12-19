@@ -1,0 +1,5 @@
+Test: 076
+Command: ls <missing >>test/no_permission >>test/file1 // cat test/file1 // rm -f test/file1 // ls >>test/no_permission >>test/file1 <missing // cat test/file1 // rm -f test/file1
+Bash exit: 0
+Mini exit: 0
+stderr differs

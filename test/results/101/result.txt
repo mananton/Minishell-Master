@@ -1,0 +1,5 @@
+Test: 101
+Command: cat test/heredoc8.txt
+Bash exit: 1
+Mini exit: 1
+stderr differs

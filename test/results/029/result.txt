@@ -1,0 +1,4 @@
+Test: 029
+Command: rm -f test/file1 // echo hello > test/file2 // cat < Makefile > test/file1 >> test/file2
+Bash exit: 1
+Mini exit: 1

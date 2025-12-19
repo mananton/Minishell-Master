@@ -1,0 +1,1 @@
+cat test/heredoc8.txt

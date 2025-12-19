@@ -1,0 +1,4 @@
+Test: 011
+Command: echo "(a' )"
+Bash exit: 0
+Mini exit: 0

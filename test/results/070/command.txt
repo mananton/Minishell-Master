@@ -1,0 +1,3 @@
+cat >file <missing
+cat file
+rm file

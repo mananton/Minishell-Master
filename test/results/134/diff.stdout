@@ -1,0 +1,5 @@
+--- /home/mananton/minimini2/test/results/134/bash.out	2025-12-18 12:31:52.415172541 +0000
++++ /home/mananton/minimini2/test/results/134/mini.out	2025-12-18 12:31:53.359174889 +0000
+@@ -1 +1 @@
+-no_permission
++*on*

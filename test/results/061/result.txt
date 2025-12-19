@@ -1,0 +1,4 @@
+Test: 061
+Command: cat <missing | echo oi
+Bash exit: 0
+Mini exit: 0

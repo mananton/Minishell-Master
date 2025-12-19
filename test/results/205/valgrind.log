@@ -1,0 +1,50 @@
+==206203== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==206203== Open file descriptor 3: /home/mananton/minimini2/test/results/205/valgrind.log
+==206203==    <inherited from parent>
+==206203== 
+==206203== 
+pen file descriptor 3: /home/mananton/minimini2/test/results/205/valgrind.log
+==206209==    <inherited from parent>
+==206209== 
+==206209== 
+==206206== 8 bytes in 1 blocks are definitely lost in loss record 1 of 6
+==206206==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206206==    by 0x110A38: ??? (in /usr/bin/sort)
+==206206==    by 0x10D8E8: ??? (in /usr/bin/sort)
+==206206==    by 0x489BD8F: (below main) (libc_start_call_main.h:58)
+==206206== 
+==206206== 48 bytes in 12 blocks are still reachable in loss record 2 of 6
+==206206==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206206==    by 0x10C1D1: ??? (in /usr/bin/sort)
+==206206==    by 0x489BD8F: (below main) (libc_start_call_main.h:58)
+==206206== 
+==206206== 128 bytes in 1 blocks are still reachable in loss record 3 of 6
+==206206==    at 0x48487A9: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206206==    by 0x1114A4: ??? (in /usr/bin/sort)
+==206206==    by 0x10D917: ??? (in /usr/bin/sort)
+==206206==    by 0x489BD8F: (below main) (libc_start_call_main.h:58)
+==206206== 
+==206206== 128 bytes in 1 blocks are indirectly lost in loss record 4 of 6
+==206206==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206206==    by 0x10DAAC: ??? (in /usr/bin/sort)
+==206206==    by 0x489BD8F: (below main) (libc_start_call_main.h:58)
+==206206== 
+==206206== 2,048 bytes in 1 blocks are indirectly lost in loss record 5 of 6
+==206206==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206206==    by 0x10DB10: ??? (in /usr/bin/sort)
+==206206==    by 0x489BD8F: (below main) (libc_start_call_main.h:58)
+==206206== 
+==206206== 2,208 (32 direct, 2,176 indirect) bytes in 1 blocks are definitely lost in loss record 6 of 6
+==206206==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206206==    by 0x10DA94: ??? (in /usr/bin/sort)
+==206206==    by 0x489BD8F: (below main) (libc_start_call_main.h:58)
+==206206== 
+) (libc_start_call_main.h:58)
+==206205== 
+==206205== 80,000 bytes in 1 blocks are still reachable in loss record 6 of 6
+==206205==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206205==    by 0x1174E9: ??? (in /usr/bin/ls)
+==206205==    by 0x11A20E: ??? (in /usr/bin/ls)
+==206205==    by 0x10D33F: ??? (in /usr/bin/ls)
+==206205==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206205== 

@@ -1,0 +1,2 @@
+syntax error near unexpected token `newline'
+`/bin/echo "start" && (ls -l | grep minishell) >'

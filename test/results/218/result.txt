@@ -1,0 +1,4 @@
+Test: 218
+Command: echo hiiiiiii > lal | ls | cat lal // cat lal // rm lal
+Bash exit: 0
+Mini exit: 0

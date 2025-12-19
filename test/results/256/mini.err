@@ -1,0 +1,3 @@
+/usr/bin/grep: &&: No such file or directory
+/usr/bin/grep: cat: No such file or directory
+/usr/bin/grep: test/file1: input file is also the output

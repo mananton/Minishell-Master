@@ -1,0 +1,5 @@
+--- /home/mananton/minimini2/test/results/154/bash.err	2025-12-18 12:32:07.995211225 +0000
++++ /home/mananton/minimini2/test/results/154/mini.err	2025-12-18 12:32:07.995211225 +0000
+@@ -1,2 +1 @@
+ cd: -f: invalid option
+-cd: usage: cd [-L|[-P [-e]] [-@]] [dir]

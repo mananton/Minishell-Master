@@ -1,0 +1,16 @@
+--- /home/mananton/minimini2/test/results/230/bash.out	2025-12-18 12:33:08.759360627 +0000
++++ /home/mananton/minimini2/test/results/230/mini.out	2025-12-18 12:33:10.607365136 +0000
+@@ -1,5 +1,5 @@
+-ola
+-heredoc10.txt
++(echoMinishell:> (echo ola) | cat | cat | ls
++(echoheredoc10.txt
+ heredoc11.txt
+ heredoc12.txt
+ heredoc13.txt
+@@ -278,4 +278,4 @@
+ test_block_261.sh
+ tester.sh
+ tests
+-279
++(echo279

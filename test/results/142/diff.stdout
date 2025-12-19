@@ -1,0 +1,4 @@
+--- /home/mananton/minimini2/test/results/142/bash.out	2025-12-18 12:32:00.079191591 +0000
++++ /home/mananton/minimini2/test/results/142/mini.out	2025-12-18 12:32:00.663193040 +0000
+@@ -0,0 +1 @@
++*Minishell:> 

@@ -1,0 +1,5 @@
+--- /home/mananton/minimini2/test/results/209/bash.err	2025-12-18 12:32:49.647313879 +0000
++++ /home/mananton/minimini2/test/results/209/mini.err	2025-12-18 12:32:49.647313879 +0000
+@@ -1,2 +1 @@
+ syntax error near unexpected token `|'
+-`| ls'

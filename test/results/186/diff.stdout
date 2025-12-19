@@ -1,0 +1,115 @@
+--- /home/mananton/minimini2/test/results/186/bash.out	2025-12-18 12:32:29.771265029 +0000
++++ /home/mananton/minimini2/test/results/186/mini.out	2025-12-18 12:32:30.331266409 +0000
+@@ -6,6 +6,8 @@
+ declare -x FT_HOOK_PATHNAME="login-user.d"
+ declare -x GDMSESSION="ubuntu"
+ declare -x GIO_USE_VFS="local"
++declare -x GLIBCPP_FORCE_NEW="1"
++declare -x GLIBCXX_FORCE_NEW="1"
+ declare -x GNOME_DESKTOP_SESSION_ID="this-is-deprecated"
+ declare -x GPG_AGENT_INFO="/run/user/101585/gnupg/S.gpg-agent:0:1"
+ declare -x GTK_IM_MODULE="ibus"
+@@ -15,6 +17,8 @@
+ declare -x JOURNAL_STREAM="8:760584"
+ declare -x KRB5CCNAME="FILE:/tmp/krb5cc_101585_M79q3j"
+ declare -x LANG="en_US.UTF-8"
++declare -x LD_LIBRARY_PATH="/usr/lib/debug"
++declare -x LD_PRELOAD="/usr/libexec/valgrind/vgpreload_core-amd64-linux.so:/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so"
+ declare -x LIBVIRT_DEFAULT_URI="qemu:///system"
+ declare -x LOGNAME="mananton"
+ declare -x MANAGERPID="180570"
+@@ -44,51 +48,55 @@
+ declare -x XDG_SESSION_PATH="/org/freedesktop/DisplayManager/Session6"
+ declare -x XDG_SESSION_TYPE="x11"
+ declare -x XMODIFIERS="@im=ibus"
+-declare -x a
+-SHELL=/bin/zsh
+-SESSION_MANAGER=local/c2r4s6.42lisboa.com:@/tmp/.ICE-unix/181144,unix/c2r4s6.42lisboa.com:/tmp/.ICE-unix/181144
+-QT_ACCESSIBILITY=1
+-XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+-SSH_AGENT_LAUNCHER=gnome-keyring
+-XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session6
+-XDG_MENU_PREFIX=gnome-
+-GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+-GTK_IM_MODULE=ibus
+-SSH_AUTH_SOCK=/run/user/101585/keyring/ssh
+-XMODIFIERS=@im=ibus
+-DESKTOP_SESSION=ubuntu
+-FT_HOOK_NAME=login-user
+-GTK_MODULES=gail:atk-bridge
+-FT_HOOK_PATHNAME=login-user.d
+-PWD=/home/mananton/minimini2/test
+-KRB5CCNAME=FILE:/tmp/krb5cc_101585_M79q3j
+-XDG_SESSION_DESKTOP=ubuntu
+-LOGNAME=mananton
++declare -x _="/usr/bin/timeout"
++USER=mananton
+ XDG_SESSION_TYPE=x11
+-GPG_AGENT_INFO=/run/user/101585/gnupg/S.gpg-agent:0:1
+-SYSTEMD_EXEC_PID=183140
+-XAUTHORITY=/home/mananton/.Xauthority
+-XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/mananton
++SHLVL=3
++LD_LIBRARY_PATH=/usr/lib/debug
+ HOME=/home/mananton
+-LANG=en_US.UTF-8
+-XDG_CURRENT_DESKTOP=ubuntu:GNOME
++OLDPWD=/home/mananton/minimini2
++DESKTOP_SESSION=ubuntu
++GTK_MODULES=gail:atk-bridge
+ XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+-INVOCATION_ID=560ab555ab9e444e9a26fe41b1059bce
+ MANAGERPID=180570
++SYSTEMD_EXEC_PID=183140
++DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/101585/bus
++LIBVIRT_DEFAULT_URI=qemu:///system
++GTK_IM_MODULE=ibus
++LOGNAME=mananton
++JOURNAL_STREAM=8:760584
++_=/usr/bin/timeout
+ XDG_SESSION_CLASS=user
+ TERM=xterm-256color
+-LIBVIRT_DEFAULT_URI=qemu:///system
+-USER=mananton
+-DISPLAY=:0
+-SHLVL=3
+-QT_IM_MODULE=ibus
++GNOME_DESKTOP_SESSION_ID=this-is-deprecated
++FT_HOOK_PATHNAME=login-user.d
++PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++SESSION_MANAGER=local/c2r4s6.42lisboa.com:@/tmp/.ICE-unix/181144,unix/c2r4s6.42lisboa.com:/tmp/.ICE-unix/181144
++INVOCATION_ID=560ab555ab9e444e9a26fe41b1059bce
++XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session6
++XDG_MENU_PREFIX=gnome-
+ XDG_RUNTIME_DIR=/run/user/101585
++GLIBCPP_FORCE_NEW=1
++DISPLAY=:0
++LANG=en_US.UTF-8
++XDG_CURRENT_DESKTOP=ubuntu:GNOME
++XMODIFIERS=@im=ibus
++XDG_SESSION_DESKTOP=ubuntu
++XAUTHORITY=/home/mananton/.Xauthority
++SSH_AGENT_LAUNCHER=gnome-keyring
++SSH_AUTH_SOCK=/run/user/101585/keyring/ssh
++XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/mananton
++SHELL=/bin/zsh
++KRB5CCNAME=FILE:/tmp/krb5cc_101585_M79q3j
++QT_ACCESSIBILITY=1
++GDMSESSION=ubuntu
++FT_HOOK_NAME=login-user
+ DOCKER_HOST=unix:///run/user/101585/docker.sock
+-GIO_USE_VFS=local
+-JOURNAL_STREAM=8:760584
++GPG_AGENT_INFO=/run/user/101585/gnupg/S.gpg-agent:0:1
++QT_IM_MODULE=ibus
++PWD=/home/mananton/minimini2/test
++XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+ XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/home/mananton/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+-GDMSESSION=ubuntu
+-DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/101585/bus
+-OLDPWD=/home/mananton/minimini2
+-_=/usr/bin/env
++GIO_USE_VFS=local
++GLIBCXX_FORCE_NEW=1
++LD_PRELOAD=/usr/libexec/valgrind/vgpreload_core-amd64-linux.so:/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so

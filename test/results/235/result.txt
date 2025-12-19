@@ -1,0 +1,6 @@
+Test: 235
+Command: (ls)
+Bash exit: 0
+Mini exit: 127
+stdout differs
+stderr differs

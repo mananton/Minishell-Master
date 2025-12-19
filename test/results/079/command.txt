@@ -1,0 +1,4 @@
+cd >> test/file1
+cd -
+cat test/file1
+rm -f test/file1

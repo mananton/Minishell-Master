@@ -1,0 +1,3 @@
+echo hi >file | echo bye
+cat file
+rm file

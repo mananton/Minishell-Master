@@ -1,0 +1,15 @@
+==201742== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==201742== Open file descriptor 3: /home/mananton/minimini2/test/results/058/valgrind.log
+==201742==    <inherited from parent>
+==201742== 
+==201742== 
+==201743== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==201743== Open file descriptor 3: /home/mananton/minimini2/test/results/058/valgrind.log
+==201743==    <inherited from parent>
+==201743== 
+==201743== 
+==201735== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==201735== Open file descriptor 3: /home/mananton/minimini2/test/results/058/valgrind.log
+==201735==    <inherited from parent>
+==201735== 
+==201735== 

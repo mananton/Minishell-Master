@@ -1,0 +1,5 @@
+--- /home/mananton/minimini2/test/results/255/bash.err	2025-12-18 12:33:27.135405375 +0000
++++ /home/mananton/minimini2/test/results/255/mini.err	2025-12-18 12:33:27.135405375 +0000
+@@ -0,0 +1,2 @@
++/usr/bin/grep: &&: No such file or directory
++/usr/bin/grep: end: No such file or directory

@@ -1,0 +1,51 @@
+==205300== FILE DESCRIPTORS: 3 open (1 std) at exit.
+==205300== Open file descriptor 4: /home/mananton/minimini2/test/results/174/valgrind.log
+==205300==    <inherited from parent>
+==205300== 
+==205300== O==205298== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==205298== Open file descriptor 3: /home/mananton/minimini2/test/results/174/valgrind.log
+==205298==    <inherited from parent>
+==205298== 
+==205298== 
+d 1 of 6
+==205300==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==205300==    by 0x115DB8: ??? (in /usr/bin/ls)
+==205300==    by 0x115DE9: ??? (in /usr/bin/ls)
+==205300==    by 0x10D528: ??? (in /usr/bin/ls)
+==205300==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==205300== 
+==205300== 56 bytes in 1 blocks are still reachable in loss record 2 of 6
+==205300==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==205300==    by 0x115DB8: ??? (in /usr/bin/ls)
+==205300==    by 0x115DE9: ??? (in /usr/bin/ls)
+==205300==    by 0x10D132: ??? (in /usr/bin/ls)
+==205300==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==205300== 
+==205300== 128 bytes in 1 blocks are still reachable in loss record 3 of 6
+==205300==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==205300==    by 0x1138F9: ??? (in /usr/bin/ls)
+==205300==    by 0x10D236: ??? (in /usr/bin/ls)
+==205300==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==205300== 
+==205300== 4,901 bytes in 279 blocks are still reachable in loss record 4 of 6
+==205300==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==205300==    by 0x11665E: ??? (in /usr/bin/ls)
+==205300==    by 0x116C9F: ??? (in /usr/bin/ls)
+==205300==    by 0x11A20E: ??? (in /usr/bin/ls)
+==205300==    by 0x10D33F: ??? (in /usr/bin/ls)
+==205300==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==205300== 
+==205300== 6,696 bytes in 1 blocks are still reachable in loss record 5 of 6
+==205300==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==205300==    by 0x115EBB: ??? (in /usr/bin/ls)
+==205300==    by 0x11A067: ??? (in /usr/bin/ls)
+==205300==    by 0x10D33F: ??? (in /usr/bin/ls)
+==205300==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==205300== 
+==205300== 80,000 bytes in 1 blocks are still reachable in loss record 6 of 6
+==205300==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==205300==    by 0x1174E9: ??? (in /usr/bin/ls)
+==205300==    by 0x11A20E: ??? (in /usr/bin/ls)
+==205300==    by 0x10D33F: ??? (in /usr/bin/ls)
+==205300==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==205300== 

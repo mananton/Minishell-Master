@@ -1,0 +1,4 @@
+--- /home/mananton/minimini2/test/results/258/bash.err	2025-12-18 12:33:29.779411798 +0000
++++ /home/mananton/minimini2/test/results/258/mini.err	2025-12-18 12:33:29.779411798 +0000
+@@ -0,0 +1 @@
++syntax error near unexpected token `|'

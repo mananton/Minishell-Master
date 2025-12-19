@@ -1,0 +1,4 @@
+Test: 005
+Command: '/bin/echo hello &&' /bin/echo bye
+Bash exit: 127
+Mini exit: 127

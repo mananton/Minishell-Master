@@ -1,0 +1,6 @@
+--- /home/mananton/minimini2/test/results/144/bash.out	2025-12-18 12:32:01.827195929 +0000
++++ /home/mananton/minimini2/test/results/144/mini.out	2025-12-18 12:32:02.375197290 +0000
+@@ -1 +1 @@
+-bye
+\ No newline at end of file
++byeMinishell:> 

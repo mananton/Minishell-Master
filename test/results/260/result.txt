@@ -1,0 +1,6 @@
+Test: 260
+Command: ((echo ola && adsdsa) || ((echo ola && aedsffds) || echo done))
+Bash exit: 0
+Mini exit: 2
+stdout differs
+stderr differs

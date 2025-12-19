@@ -1,0 +1,5 @@
+Test: 035
+Command: cmd > |
+Bash exit: 2
+Mini exit: 2
+stderr differs

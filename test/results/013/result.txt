@@ -1,0 +1,6 @@
+Test: 013
+Command: EOF'A'"'|'"
+Bash exit: 127
+Mini exit: 127
+stdout differs
+stderr differs

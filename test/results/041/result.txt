@@ -1,0 +1,5 @@
+Test: 041
+Command: export A="hi there" // echo $A > out | unset A | echo $A >> out | export A=FUCK | echo $A >> out // cat out // rm out
+Bash exit: 0
+Mini exit: 0
+stdout differs

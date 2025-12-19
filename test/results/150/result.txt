@@ -1,0 +1,5 @@
+Test: 150
+Command: cd // pwd // cd - // pwd
+Bash exit: 0
+Mini exit: 0
+stdout differs

@@ -1,0 +1,4 @@
+Test: 033
+Command: echo hi >">" test/file1 // ls // rm '>'
+Bash exit: 0
+Mini exit: 0

@@ -1,0 +1,10 @@
+==207255== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==207255== Open file descriptor 3: /home/mananton/minimini2/test/results/237/valgrind.log
+==207255==    <inherited from parent>
+==207255== 
+==207255== 
+==207253== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==207253== Open file descriptor 3: /home/mananton/minimini2/test/results/237/valgrind.log
+==207253==    <inherited from parent>
+==207253== 
+==207253== 

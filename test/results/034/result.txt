@@ -1,0 +1,4 @@
+Test: 034
+Command: < Makefile
+Bash exit: 1
+Mini exit: 1

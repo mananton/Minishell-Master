@@ -1,0 +1,6 @@
+Test: 231
+Command: ls && cat Makefile
+Bash exit: 1
+Mini exit: 2
+stdout differs
+stderr differs

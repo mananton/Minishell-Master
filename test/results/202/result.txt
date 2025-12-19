@@ -1,0 +1,5 @@
+Test: 202
+Command: grep -i include src/main.c | sort | uniq
+Bash exit: 0
+Mini exit: 0
+stderr differs

@@ -1,0 +1,5 @@
+unset USER
+unset PATH
+unset PWD
+ls
+/bin/ls

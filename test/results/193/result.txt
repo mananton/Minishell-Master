@@ -1,0 +1,4 @@
+Test: 193
+Command: exit +100
+Bash exit: 100
+Mini exit: 100

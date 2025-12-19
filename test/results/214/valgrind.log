@@ -1,0 +1,140 @@
+==206485== FILE DESCRIPTORS: 5 open (3 std) at exit.
+==206485== Open file descriptor 4: /home/mananton/minimini2/test/results/214/valgrind.log
+==206485==    <inherited from parent>
+==206485== 
+==206485== O==206484== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==206484== Open file descriptor 3: /home/mananton/minimini2/test/results/214/valgrind.log
+==206484==    <inherited from parent>
+==206484== 
+==206484== 
+ 1 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x11665E: ??? (in /usr/bin/ls)
+==206485==    by 0x1166C5: ??? (in /usr/bin/ls)
+==206485==    by 0x10DDD3: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 10 bytes in 1 blocks are still reachable in loss record 2 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x494658E: strdup (strdup.c:42)
+==206485==    by 0x48DBD57: __textdomain (textdomain.c:94)
+==206485==    by 0x48DBD57: textdomain (textdomain.c:64)
+==206485==    by 0x10CDE7: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 12 bytes in 1 blocks are still reachable in loss record 3 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x494658E: strdup (strdup.c:42)
+==206485==    by 0x48D631A: _nl_load_locale_from_archive (loadarchive.c:464)
+==206485==    by 0x48D50DF: _nl_find_locale (findlocale.c:152)
+==206485==    by 0x48D4856: setlocale (setlocale.c:337)
+==206485==    by 0x48D4856: setlocale (setlocale.c:217)
+==206485==    by 0x10CDD0: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 12 bytes in 1 blocks are still reachable in loss record 4 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x48D46EB: new_composite_name (setlocale.c:165)
+==206485==    by 0x48D4BAA: setlocale (setlocale.c:375)
+==206485==    by 0x48D4BAA: setlocale (setlocale.c:217)
+==206485==    by 0x10CDD0: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 32 bytes in 1 blocks are still reachable in loss record 5 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x11669C: ??? (in /usr/bin/ls)
+==206485==    by 0x10DDD3: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 34 bytes in 1 blocks are still reachable in loss record 6 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x48D85DE: set_binding_values.part.0 (bindtextdom.c:203)
+==206485==    by 0x48D889B: set_binding_values (bindtextdom.c:322)
+==206485==    by 0x48D889B: bindtextdomain (bindtextdom.c:320)
+==206485==    by 0x10CDDF: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 56 bytes in 1 blocks are still reachable in loss record 7 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x115DB8: ??? (in /usr/bin/ls)
+==206485==    by 0x115DE9: ??? (in /usr/bin/ls)
+==206485==    by 0x10D528: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 56 bytes in 1 blocks are still reachable in loss record 8 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x115DB8: ??? (in /usr/bin/ls)
+==206485==    by 0x115DE9: ??? (in /usr/bin/ls)
+==206485==    by 0x10D132: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 120 bytes in 1 blocks are still reachable in loss record 9 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x48D62FF: _nl_load_locale_from_archive (loadarchive.c:460)
+==206485==    by 0x48D50DF: _nl_find_locale (findlocale.c:152)
+==206485==    by 0x48D4856: setlocale (setlocale.c:337)
+==206485==    by 0x48D4856: setlocale (setlocale.c:217)
+==206485==    by 0x10CDD0: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 128 bytes in 1 blocks are still reachable in loss record 10 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x1138F9: ??? (in /usr/bin/ls)
+==206485==    by 0x10D236: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 144 bytes in 12 blocks are still reachable in loss record 11 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x494658E: strdup (strdup.c:42)
+==206485==    by 0x48D4C84: setlocale (setlocale.c:366)
+==206485==    by 0x48D4C84: setlocale (setlocale.c:217)
+==206485==    by 0x10CDD0: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 3,728 bytes in 12 blocks are still reachable in loss record 12 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x48D596E: _nl_intern_locale_data (loadlocale.c:97)
+==206485==    by 0x48D6370: _nl_load_locale_from_archive (loadarchive.c:477)
+==206485==    by 0x48D50DF: _nl_find_locale (findlocale.c:152)
+==206485==    by 0x48D4856: setlocale (setlocale.c:337)
+==206485==    by 0x48D4856: setlocale (setlocale.c:217)
+==206485==    by 0x10CDD0: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 4,096 bytes in 1 blocks are still reachable in loss record 13 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x491CBA3: _IO_file_doallocate (filedoalloc.c:101)
+==206485==    by 0x492BCDF: _IO_doallocbuf (genops.c:347)
+==206485==    by 0x492AF5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+==206485==    by 0x49296D4: _IO_new_file_xsputn (fileops.c:1243)
+==206485==    by 0x49296D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==206485==    by 0x4928288: fwrite_unlocked (iofwrite_u.c:42)
+==206485==    by 0x1180CE: ??? (in /usr/bin/ls)
+==206485==    by 0x118210: ??? (in /usr/bin/ls)
+==206485==    by 0x11EF12: ??? (in /usr/bin/ls)
+==206485==    by 0x119A71: ??? (in /usr/bin/ls)
+==206485==    by 0x10D33F: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 4,901 bytes in 279 blocks are still reachable in loss record 14 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x11665E: ??? (in /usr/bin/ls)
+==206485==    by 0x116C9F: ??? (in /usr/bin/ls)
+==206485==    by 0x11A20E: ??? (in /usr/bin/ls)
+==206485==    by 0x10D33F: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 6,696 bytes in 1 blocks are still reachable in loss record 15 of 16
+==206485==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x115EBB: ??? (in /usr/bin/ls)
+==206485==    by 0x11A067: ??? (in /usr/bin/ls)
+==206485==    by 0x10D33F: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 
+==206485== 80,000 bytes in 1 blocks are still reachable in loss record 16 of 16
+==206485==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==206485==    by 0x1174E9: ??? (in /usr/bin/ls)
+==206485==    by 0x11A20E: ??? (in /usr/bin/ls)
+==206485==    by 0x10D33F: ??? (in /usr/bin/ls)
+==206485==    by 0x48C7D8F: (below main) (libc_start_call_main.h:58)
+==206485== 

@@ -1,0 +1,6 @@
+Test: 088
+Command: &
+Bash exit: 2
+Mini exit: 127
+stdout differs
+stderr differs

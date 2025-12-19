@@ -84,19 +84,19 @@ $(OBJ_DIR) $(DEP_DIR) $(BIN_DIR):
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(dir $@) $(dir $(DEP_DIR)$*.d)
-	$(CC) $(CFLAGS) ${INCS} -c $< -o $@ -MF $(DEP_DIR)$*.d || { echo "$(RED)Failed to create lib obj/dep$(RESET)"; exit 1; }
+	$(CC) $(CFLAGS) ${INCS} -c $< -o $@ -MF $(DEP_DIR)$*.d || { echo "Failed to create lib obj/dep"; exit 1; }
 
 $(BIN_DIR)$(NAME): $(OBJS) | $(BIN_DIR)
-	$(AR) $@ $(OBJS) || { echo "$(RED)Failed to create lib$(RESET)"; exit 1; }
-	@echo "$(BOLD)$(GREEN)Library compiled succesfully$(RESET)"
+	$(AR) $@ $(OBJS) || { echo "Failed to create lib"; exit 1; }
+	@echo "Library compiled succesfully"
 
 clean:
 	@if [ -d $(OBJ_DIR) ] || [ -d $(DEP_DIR) ]; then \
-		echo "$(BOLD)$(YELLOW)Cleaning lib$(RESET)"; \
+		echo "Cleaning lib"; \
 		rm -rf $(OBJ_DIR) $(DEP_DIR); \
-		echo "$(BOLD)$(GREEN)Lib clean$(RESET)"; \
+		echo "Lib clean"; \
 	else \
-		echo "$(BOLD)$(BLUE)No objs or deps to clean in lib$(RESET)"; \
+		echo "No objs or deps to clean in lib"; \
 	fi
 
 fclean: clean

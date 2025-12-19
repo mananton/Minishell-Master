@@ -1,0 +1,5 @@
+Test: 086
+Command: echo hi |    |  < >>
+Bash exit: 2
+Mini exit: 2
+stderr differs

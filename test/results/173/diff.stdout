@@ -1,0 +1,10 @@
+--- /home/mananton/minimini2/test/results/173/bash.out	2025-12-18 12:32:19.223239004 +0000
++++ /home/mananton/minimini2/test/results/173/mini.out	2025-12-18 12:32:20.995243381 +0000
+@@ -12,7 +12,6 @@
+ heredoc8.txt
+ heredoc9.txt
+ *in*
+-ls
+ no_permission
+ results
+ test

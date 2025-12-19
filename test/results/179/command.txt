@@ -1,0 +1,4 @@
+export hello world
+echo $hello $world
+env | grep hello
+env | grep world

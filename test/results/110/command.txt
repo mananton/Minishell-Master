@@ -1,0 +1,3 @@
+export VAR="ls src"
+$VAR
+"$VAR"

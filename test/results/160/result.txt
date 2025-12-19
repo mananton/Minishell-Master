@@ -1,0 +1,4 @@
+Test: 160
+Command: cd $PWD hi
+Bash exit: 1
+Mini exit: 1

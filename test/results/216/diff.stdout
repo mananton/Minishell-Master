@@ -1,0 +1,8 @@
+--- /home/mananton/minimini2/test/results/216/bash.out	2025-12-18 12:32:53.859324199 +0000
++++ /home/mananton/minimini2/test/results/216/mini.out	2025-12-18 12:32:54.843326610 +0000
+@@ -1,4 +1,4 @@
+-heredoc10.txt
++helloheredoc10.txt
+ heredoc11.txt
+ heredoc12.txt
+ heredoc13.txt

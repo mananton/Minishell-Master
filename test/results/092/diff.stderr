@@ -1,0 +1,5 @@
+--- /home/mananton/minimini2/test/results/092/bash.err	2025-12-18 12:31:15.347079840 +0000
++++ /home/mananton/minimini2/test/results/092/mini.err	2025-12-18 12:31:15.347079840 +0000
+@@ -1 +1 @@
+-cat: test/heredoc9.txt: No such file or directory
++/usr/bin/cat: test/heredoc9.txt: No such file or directory

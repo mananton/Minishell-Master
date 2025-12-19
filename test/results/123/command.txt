@@ -1,0 +1,1 @@
+echo "echo $'NONE'" 'echo $"NONE"'

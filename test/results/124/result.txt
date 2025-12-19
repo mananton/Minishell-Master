@@ -1,0 +1,4 @@
+Test: 124
+Command: cd obj // echo $PWD $OLDPWD // cd ..
+Bash exit: 0
+Mini exit: 0

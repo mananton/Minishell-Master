@@ -1,0 +1,4 @@
+Test: 157
+Command: pwd oi
+Bash exit: 0
+Mini exit: 0

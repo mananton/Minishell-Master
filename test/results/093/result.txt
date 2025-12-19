@@ -1,0 +1,5 @@
+Test: 093
+Command: cat test/heredoc10.txt
+Bash exit: 1
+Mini exit: 1
+stderr differs

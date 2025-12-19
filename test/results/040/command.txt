@@ -1,0 +1,3 @@
+ls > file | ls
+cat file
+rm file

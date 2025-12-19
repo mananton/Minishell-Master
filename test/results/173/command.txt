@@ -1,0 +1,3 @@
+touch ls
+ls
+rm ls

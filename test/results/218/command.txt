@@ -1,0 +1,3 @@
+echo hiiiiiii > lal | ls | cat lal
+cat lal
+rm lal

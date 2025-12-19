@@ -82,29 +82,29 @@ $(OBJ_DIR) $(DEP_DIR):
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(dir $@) $(dir $(DEP_DIR)$*.d)
-	$(CC) $(CFLAGS) ${INCS} -c $< -o $@ -MF $(DEP_DIR)$*.d || { echo "$(RED)Failed to create obj/dep$(RESET)"; exit 1;}
-	@echo "$(BOLD)$(YELLOW)File $< compiled$(RESET)"
+	$(CC) $(CFLAGS) ${INCS} -c $< -o $@ -MF $(DEP_DIR)$*.d || { echo "Failed to create obj/dep"; exit 1;}
+	@echo "File $< compiled"
 
 $(LIBFT):
-	@echo "$(BOLD)$(YELLOW)Building libft$(RESET)"
+	@echo "Building libft"
 	@$(MAKE) -s -C $(LIBFT_DIR) all
 
 $(NAME): $(OBJS) $(LIBFT)
-	@echo "$(BOLD)$(YELLOW)Creating program$(RESET)"
-	$(CC) $(CFLAGS) ${INCS} $(OBJS) $(LIBFT) -o $@ $(RDLINE_FLAG) || { echo "$(RED)Failed to create program$(RESET)"; exit 1; }
-	@echo "$(BOLD)$(GREEN)Program compiled succesfully$(RESET)"
+	@echo "Creating program"
+	$(CC) $(CFLAGS) ${INCS} $(OBJS) $(LIBFT) -o $@ $(RDLINE_FLAG) || { echo "Failed to create program"; exit 1; }
+	@echo "Program compiled succesfully"
 
 libft:
-	@echo "$(BOLD)$(YELLOW)Building libft$(RESET)"
+	@echo "Building libft"
 	@$(MAKE) -C $(LIBFT_DIR)
 
 clean:
 	@if [ -d $(OBJ_DIR) ] || [ -d $(DEP_DIR) ]; then \
-		echo "$(BOLD)$(YELLOW)Cleaning$(RESET)"; \
+		echo "Cleaning"; \
 		rm -rf $(OBJ_DIR) $(DEP_DIR); \
-		echo "$(BOLD)$(GREEN)Clean$(RESET)"; \
+		echo "Clean"; \
 	else \
-		echo "$(BOLD)$(BLUE)No objs or deps to clean$(RESET)"; \
+		echo "No objs or deps to clean"; \
 	fi
 
 fclean: clean

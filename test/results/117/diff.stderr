@@ -1,0 +1,5 @@
+--- /home/mananton/minimini2/test/results/117/bash.err	2025-12-18 12:31:38.295137341 +0000
++++ /home/mananton/minimini2/test/results/117/mini.err	2025-12-18 12:31:38.295137341 +0000
+@@ -1 +1 @@
+-$NONE: ambiguous redirect
++: No such file or directory

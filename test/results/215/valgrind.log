@@ -1,0 +1,40 @@
+==206519== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==206519== Open file descriptor 3: /home/mananton/minimini2/test/results/215/valgrind.log
+==206519==    <inherited from parent>
+==206519== 
+==206519== 
+==206520== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==206520== Open file descriptor 3: /home/mananton/minimini2/test/results/215/valgrind.log
+==206520==    <inherited from parent>
+==206520== 
+==206520== 
+==206521== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==206521== Open file descriptor 3: /home/mananton/minimini2/test/results/215/valgrind.log
+==206521==    <inherited from parent>
+==206521== 
+==206521== 
+==206522== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==206522== Open file descriptor 3: /home/mananton/minimini2/test/results/215/valgrind.log
+==206522==    <inherited from parent>
+==206522== 
+==206522== 
+==206523== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==206523== Open file descriptor 3: /home/mananton/minimini2/test/results/215/valgrind.log
+==206523==    <inherited from parent>
+==206523== 
+==206523== 
+==206524== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==206524== Open file descriptor 3: /home/mananton/minimini2/test/results/215/valgrind.log
+==206524==    <inherited from parent>
+==206524== 
+==206524== 
+==206525== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==206525== Open file descriptor 3: /home/mananton/minimini2/test/results/215/valgrind.log
+==206525==    <inherited from parent>
+==206525== 
+==206525== 
+==206518== FILE DESCRIPTORS: 1 open (0 std) at exit.
+==206518== Open file descriptor 3: /home/mananton/minimini2/test/results/215/valgrind.log
+==206518==    <inherited from parent>
+==206518== 
+==206518== 

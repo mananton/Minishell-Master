@@ -1,0 +1,5 @@
+--- /home/mananton/minimini2/test/results/021/bash.err	2025-12-18 12:30:01.734892730 +0000
++++ /home/mananton/minimini2/test/results/021/mini.err	2025-12-18 12:30:01.734892730 +0000
+@@ -1 +1 @@
+-grep: src/main.c: No such file or directory
++/usr/bin/grep: src/main.c: No such file or directory
