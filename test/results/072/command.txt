@@ -1,4 +1,0 @@
-echo hi > file
-ls >>     file
-cat file
-rm file

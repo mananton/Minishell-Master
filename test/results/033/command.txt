@@ -1,3 +1,0 @@
-echo hi >">" test/file1
-ls
-rm '>'

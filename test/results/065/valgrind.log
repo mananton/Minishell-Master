@@ -1,9 +1,0 @@
-==201969== FILE DESCRIPTORS: 1 open (0 std) at exit.
-==201969== Open file descriptor 3: /home/mananton/minimini2/test/results/065/valgrind.log
-==201969==    <inherited from parent>
-==201969== 
-==201969== 
-pen file descriptor 3: /home/mananton/minimini2/test/results/065/valgrind.log
-==201976==    <inherited from parent>
-==201976== 
-==201976== 

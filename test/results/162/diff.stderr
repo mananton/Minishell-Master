@@ -1,6 +1,0 @@
---- /home/mananton/minimini2/test/results/162/bash.err	2025-12-18 12:32:13.035223705 +0000
-+++ /home/mananton/minimini2/test/results/162/mini.err	2025-12-18 12:32:13.039223714 +0000
-@@ -1 +1 @@
--env: ‘hello’: No such file or directory
-+env: 'hello': No such file or directory
-\ No newline at end of file

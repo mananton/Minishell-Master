@@ -1,4 +1,0 @@
-Test: 057
-Command: echo hi | cat <src/main.c
-Bash exit: 1
-Mini exit: 1

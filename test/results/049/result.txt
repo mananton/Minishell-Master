@@ -1,4 +1,0 @@
-Test: 049
-Command: echo < Makefile "bonjour       42"
-Bash exit: 1
-Mini exit: 1

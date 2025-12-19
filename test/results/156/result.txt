@@ -1,4 +1,0 @@
-Test: 156
-Command: cd none
-Bash exit: 1
-Mini exit: 1

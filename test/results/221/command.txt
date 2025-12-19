@@ -1,3 +1,0 @@
-ls | wc | echo > out.txt | wc -l
-cat out.txt
-rm out.txt

@@ -1,4 +1,0 @@
-Test: 149
-Command: echo - "" "  " hello
-Bash exit: 0
-Mini exit: 0

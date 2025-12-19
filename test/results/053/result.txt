@@ -1,4 +1,0 @@
-Test: 053
-Command: echo <missing <src/main.c <missing
-Bash exit: 1
-Mini exit: 1

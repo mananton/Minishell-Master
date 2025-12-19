@@ -1,5 +1,0 @@
-Test: 199
-Command: cat include/minishell.h | grep ");"$
-Bash exit: 1
-Mini exit: 1
-stderr differs

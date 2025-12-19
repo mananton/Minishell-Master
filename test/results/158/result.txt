@@ -1,4 +1,0 @@
-Test: 158
-Command: cd "some folder"
-Bash exit: 1
-Mini exit: 1

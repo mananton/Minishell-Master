@@ -1,4 +1,0 @@
-Test: 060
-Command: cat <missing | cat
-Bash exit: 0
-Mini exit: 0

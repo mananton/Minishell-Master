@@ -1,4 +1,0 @@
-Test: 183
-Command: unset NONE
-Bash exit: 0
-Mini exit: 0

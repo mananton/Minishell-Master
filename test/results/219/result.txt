@@ -1,5 +1,0 @@
-Test: 219
-Command: echo hi | ls | grep Makefile | wc -l > out2 | cat out2 // rm out2
-Bash exit: 0
-Mini exit: 0
-stdout differs

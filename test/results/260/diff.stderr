@@ -1,6 +1,0 @@
---- /home/mananton/minimini2/test/results/260/bash.err	2025-12-18 12:33:30.843414381 +0000
-+++ /home/mananton/minimini2/test/results/260/mini.err	2025-12-18 12:33:30.843414381 +0000
-@@ -1,2 +1 @@
--adsdsa: command not found
--aedsffds: command not found
-+syntax error near unexpected token `|'

@@ -1,3 +1,0 @@
-cd obj
-echo $PWD $OLDPWD
-cd ..

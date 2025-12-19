@@ -1,6 +1,0 @@
-Test: 174
-Command: unset USER // unset PATH // unset PWD // ls // /bin/ls
-Bash exit: 0
-Mini exit: 0
-stdout differs
-stderr differs

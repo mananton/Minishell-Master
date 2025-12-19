@@ -1,6 +1,0 @@
-Test: 252
-Command: /bin/echo (
-Bash exit: 2
-Mini exit: 0
-stdout differs
-stderr differs

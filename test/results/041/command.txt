@@ -1,4 +1,0 @@
-export A="hi there"
-echo $A > out | unset A | echo $A >> out | export A=FUCK | echo $A >> out
-cat out
-rm out

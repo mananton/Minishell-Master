@@ -1,3 +1,0 @@
-ls -l "" "HI'LOL'|" | >> hi echo cat $HOME
-cat hi
-rm hi

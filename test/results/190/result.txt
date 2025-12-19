@@ -1,4 +1,0 @@
-Test: 190
-Command: exit p
-Bash exit: 2
-Mini exit: 2

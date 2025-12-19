@@ -1,5 +1,0 @@
-Test: 175
-Command: export var // echo $var // unset var
-Bash exit: 0
-Mini exit: 0
-stdout differs

@@ -1,3 +1,0 @@
-(echo ola) | cat | cat | cat
-(echo ola) | cat | cat | ls
-(echo ola) | cat | cat | ls | wc -l

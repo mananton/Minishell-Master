@@ -1,3 +1,0 @@
-export HELLO="123 A-"
-echo $HELLO
-unset HELLO

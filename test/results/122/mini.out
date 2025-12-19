@@ -1,2 +1,0 @@
-a=1Minishell:> b=2
-b=2Minishell:> echo $a $b

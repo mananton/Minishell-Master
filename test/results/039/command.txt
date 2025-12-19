@@ -1,2 +1,0 @@
-ls > file1 file2
-rm file1

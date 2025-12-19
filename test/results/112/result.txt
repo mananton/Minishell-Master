@@ -1,5 +1,0 @@
-Test: 112
-Command: export VAR="" // /bin/echo $VAR
-Bash exit: 0
-Mini exit: 0
-stdout differs

@@ -1,6 +1,0 @@
---- /home/mananton/minimini2/test/results/085/bash.err	2025-12-18 12:31:09.299064621 +0000
-+++ /home/mananton/minimini2/test/results/085/mini.err	2025-12-18 12:31:09.303064632 +0000
-@@ -1,2 +1 @@
--syntax error near unexpected token `newline'
--`<<<'
-+syntax error near unexpected token `<'

@@ -1,4 +1,0 @@
-Test: 177
-Command: export HELLO=123 A // echo $HELLO // unset HELLO
-Bash exit: 0
-Mini exit: 0

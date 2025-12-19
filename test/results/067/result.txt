@@ -1,5 +1,0 @@
-Test: 067
-Command: echo hi | echo >file // cat file // rm file
-Bash exit: 0
-Mini exit: 0
-stdout differs

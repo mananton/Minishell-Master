@@ -1,6 +1,0 @@
---- /home/mananton/minimini2/test/results/245/bash.err	2025-12-18 12:33:20.359388896 +0000
-+++ /home/mananton/minimini2/test/results/245/mini.err	2025-12-18 12:33:20.359388896 +0000
-@@ -1,2 +1 @@
--syntax error near unexpected token `('
--`(ls) (ls)'
-+: command not found

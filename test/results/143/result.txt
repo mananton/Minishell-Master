@@ -1,5 +1,0 @@
-Test: 143
-Command: echo * | awk -v RS=" " '{print}' | sort
-Bash exit: 0
-Mini exit: 0
-stdout differs

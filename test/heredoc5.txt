@@ -1,4 +1,0 @@
-<< $'USER' cat
-1
-2
-USER

@@ -1,3 +1,0 @@
-ls >txt -l
-cat txt
-rm txt

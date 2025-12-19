@@ -1,4 +1,0 @@
-Test: 051
-Command: cat <"1""2""3""4""5"
-Bash exit: 1
-Mini exit: 1

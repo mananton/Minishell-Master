@@ -1,6 +1,0 @@
-Test: 019
-Command: foo
-Bash exit: 127
-Mini exit: 127
-stdout differs
-stderr differs

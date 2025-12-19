@@ -1,4 +1,0 @@
-Test: 167
-Command: export VAR="h   e    l l      o" // echo $VAR // unset VAR
-Bash exit: 0
-Mini exit: 0

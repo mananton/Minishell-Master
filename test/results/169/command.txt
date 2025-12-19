@@ -1,3 +1,0 @@
-export AAA=BBB=CCC
-echo $AAA
-unset AAA

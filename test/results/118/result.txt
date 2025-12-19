@@ -1,4 +1,0 @@
-Test: 118
-Command: "$NONE" /bin/echo hello
-Bash exit: 127
-Mini exit: 127

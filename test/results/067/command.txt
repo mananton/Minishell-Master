@@ -1,3 +1,0 @@
-echo hi | echo >file
-cat file
-rm file

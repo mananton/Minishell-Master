@@ -1,4 +1,0 @@
-Test: 054
-Command: echo <Makefile | cat < src/main.c
-Bash exit: 1
-Mini exit: 1

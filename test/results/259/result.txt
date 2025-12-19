@@ -1,6 +1,0 @@
-Test: 259
-Command: (exit 99) || echo $?
-Bash exit: 0
-Mini exit: 2
-stdout differs
-stderr differs

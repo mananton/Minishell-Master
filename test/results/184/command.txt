@@ -1,2 +1,0 @@
-unset SHELL
-env | grep SHELL

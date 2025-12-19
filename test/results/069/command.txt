@@ -1,3 +1,0 @@
-cat <Makefile >file
-cat file
-rm file

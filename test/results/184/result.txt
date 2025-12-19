@@ -1,4 +1,0 @@
-Test: 184
-Command: unset SHELL // env | grep SHELL
-Bash exit: 1
-Mini exit: 1

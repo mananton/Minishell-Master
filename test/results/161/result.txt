@@ -1,5 +1,0 @@
-Test: 161
-Command: cd 123123 // export VAR=42 // export | grep VAR // unset VAR
-Bash exit: 0
-Mini exit: 0
-stdout differs

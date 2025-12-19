@@ -1,1 +1,0 @@
-echo <Makefile | cat src/main.c

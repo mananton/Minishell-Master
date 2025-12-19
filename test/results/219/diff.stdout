@@ -1,4 +1,0 @@
---- /home/mananton/minimini2/test/results/219/bash.out	2025-12-18 12:32:57.575333296 +0000
-+++ /home/mananton/minimini2/test/results/219/mini.out	2025-12-18 12:32:59.035336868 +0000
-@@ -0,0 +1 @@
-+echo hi | ls | grep Makefile | wc -l > out2 | cat out2 [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K2

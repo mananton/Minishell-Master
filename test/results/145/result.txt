@@ -1,5 +1,0 @@
-Test: 145
-Command: echo -nnn hello
-Bash exit: 0
-Mini exit: 0
-stdout differs

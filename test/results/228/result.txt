@@ -1,5 +1,0 @@
-Test: 228
-Command: ls -l "" "HI'LOL'|" | >> hi echo cat $HOME // cat hi // rm hi
-Bash exit: 0
-Mini exit: 0
-stderr differs

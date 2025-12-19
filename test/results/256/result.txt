@@ -1,6 +1,0 @@
-Test: 256
-Command: /bin/echo "start" && (ls -l | grep minishell) > test/file1 && cat test/file1
-Bash exit: 1
-Mini exit: 2
-stdout differs
-stderr differs

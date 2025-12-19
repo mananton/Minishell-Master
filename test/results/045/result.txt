@@ -1,4 +1,0 @@
-Test: 045
-Command: grep hi < Makefile
-Bash exit: 1
-Mini exit: 1

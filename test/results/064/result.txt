@@ -1,4 +1,0 @@
-Test: 064
-Command: ls >test/file1 >test/no_permission // cat test/file1 // cat test/no_permission // rm -f test/file1
-Bash exit: 0
-Mini exit: 0

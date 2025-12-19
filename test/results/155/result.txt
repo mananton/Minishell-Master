@@ -1,4 +1,0 @@
-Test: 155
-Command: cd src include
-Bash exit: 1
-Mini exit: 1

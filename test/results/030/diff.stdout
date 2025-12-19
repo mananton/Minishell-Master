@@ -1,5 +1,0 @@
---- /home/mananton/minimini2/test/results/030/bash.out	2025-12-18 12:30:09.954913838 +0000
-+++ /home/mananton/minimini2/test/results/030/mini.out	2025-12-18 12:30:11.322917347 +0000
-@@ -1 +1 @@
--/home/mananton/minimini2/test/test_block_030.sh: line 1: foo: command not found
-+fooMinishell:> cat test/file1

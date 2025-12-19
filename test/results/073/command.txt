@@ -1,3 +1,0 @@
-ls >file >>file
-cat file
-rm file

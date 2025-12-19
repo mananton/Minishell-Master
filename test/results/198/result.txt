@@ -1,4 +1,0 @@
-Test: 198
-Command: ls | grep minishell
-Bash exit: 1
-Mini exit: 1

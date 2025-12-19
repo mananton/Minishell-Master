@@ -1,5 +1,0 @@
-Test: 036
-Command: hello ||||
-Bash exit: 2
-Mini exit: 2
-stderr differs

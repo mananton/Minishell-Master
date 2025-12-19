@@ -1,4 +1,0 @@
-ls >test/file1 >test/no_permission
-cat test/file1
-cat test/no_permission
-rm -f test/file1

@@ -1,4 +1,0 @@
-echo hi >file1 | echo bye >file2
-cat file1
-cat file2
-rm file1 file2

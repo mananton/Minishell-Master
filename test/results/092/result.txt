@@ -1,5 +1,0 @@
-Test: 092
-Command: cat test/heredoc9.txt
-Bash exit: 1
-Mini exit: 1
-stderr differs

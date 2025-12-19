@@ -1,4 +1,0 @@
-touch aaa
-chmod 000 aaa
-< aaa  wc | echo Hi
-rm -f aaa

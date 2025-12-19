@@ -1,5 +1,0 @@
-Test: 180
-Command: export HELLO-=123
-Bash exit: 1
-Mini exit: 1
-stderr differs

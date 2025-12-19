@@ -1,3 +1,0 @@
-/usr/bin/ls: cannot access '&&': No such file or directory
-/usr/bin/ls: cannot access 'cat': No such file or directory
-/usr/bin/ls: cannot access 'Makefile': No such file or directory

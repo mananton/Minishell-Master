@@ -1,4 +1,0 @@
-Test: 009
-Command: ""
-Bash exit: 127
-Mini exit: 127

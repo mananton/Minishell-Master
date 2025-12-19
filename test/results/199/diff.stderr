@@ -1,5 +1,0 @@
---- /home/mananton/minimini2/test/results/199/bash.err	2025-12-18 12:32:38.555286648 +0000
-+++ /home/mananton/minimini2/test/results/199/mini.err	2025-12-18 12:32:38.555286648 +0000
-@@ -1 +1 @@
--cat: include/minishell.h: No such file or directory
-+/usr/bin/cat: include/minishell.h: No such file or directory

@@ -1,4 +1,0 @@
-Test: 077
-Command: cat < Makefile|ls
-Bash exit: 0
-Mini exit: 0

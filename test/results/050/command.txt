@@ -1,3 +1,0 @@
-touch "file with spaces"
-cat <"file with spaces"
-rm "file with spaces"

@@ -1,5 +1,0 @@
-Test: 222
-Command: cat    <| ls
-Bash exit: 2
-Mini exit: 2
-stderr differs

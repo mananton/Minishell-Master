@@ -1,4 +1,0 @@
---- /home/mananton/minimini2/test/results/161/bash.out	2025-12-18 12:32:11.407219675 +0000
-+++ /home/mananton/minimini2/test/results/161/mini.out	2025-12-18 12:32:12.471222309 +0000
-@@ -1 +0,0 @@
--declare -x VAR="42"

@@ -1,5 +1,0 @@
---- /home/mananton/minimini2/test/results/176/bash.err	2025-12-18 12:32:23.155248715 +0000
-+++ /home/mananton/minimini2/test/results/176/mini.err	2025-12-18 12:32:23.159248724 +0000
-@@ -1 +1 @@
--export: `A-': not a valid identifier
-+export: 'A-': not a valid identifier

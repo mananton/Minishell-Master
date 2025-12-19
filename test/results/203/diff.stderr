@@ -1,5 +1,0 @@
---- /home/mananton/minimini2/test/results/203/bash.err	2025-12-18 12:32:42.739296928 +0000
-+++ /home/mananton/minimini2/test/results/203/mini.err	2025-12-18 12:32:42.739296928 +0000
-@@ -1 +1 @@
--cat: Makefile: No such file or directory
-+/usr/bin/cat: Makefile: No such file or directory

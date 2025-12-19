@@ -1,6 +1,0 @@
-Test: 230
-Command: (echo ola) | cat | cat | cat // (echo ola) | cat | cat | ls // (echo ola) | cat | cat | ls | wc -l
-Bash exit: 0
-Mini exit: 0
-stdout differs
-stderr differs

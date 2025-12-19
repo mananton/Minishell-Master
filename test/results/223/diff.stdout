@@ -1,4 +1,0 @@
---- /home/mananton/minimini2/test/results/223/bash.out	2025-12-18 12:33:03.171346980 +0000
-+++ /home/mananton/minimini2/test/results/223/mini.out	2025-12-18 12:33:03.719348320 +0000
-@@ -0,0 +1 @@
-+Parsing alloc error in: 4
